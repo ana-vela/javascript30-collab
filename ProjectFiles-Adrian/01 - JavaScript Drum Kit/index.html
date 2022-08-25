@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JS drum kit (Adrian Skar)</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+	<main class="keys">
+		<div class="key" data-key="65"><kbd>A</kbd><span class="sound">clap</span></div>
+		<div class="key" data-key="83"><kbd>S</kbd><span class="sound">hithat</span></div>
+		<div class="key" data-key="68"><kbd>D</kbd><span class="sound">kick</span></div>
+		<div class="key" data-key="70"><kbd>F</kbd><span class="sound">openhat</span></div>
+		<div class="key" data-key="71"><kbd>G</kbd><span class="sound">boom</span></div>
+		<div class="key" data-key="72"><kbd>H</kbd><span class="sound">ride</span></div>
+		<div class="key" data-key="74"><kbd>J</kbd><span class="sound">snare</span></div>
+		<div class="key" data-key="75"><kbd>K</kbd><span class="sound">tom</span></div>
+		<div class="key" data-key="76"><kbd>L</kbd><span class="sound">tink</span></div>
+		<div class="key" data-key="32"><kbd>Space</kbd><span class="sound">bonus</span></div>
+	</main>
+
+	<audio src="sounds/clap.wav" data-key="65"></audio>
+	<audio src="sounds/hithat.wav" data-key="83"></audio>
+	<audio src="sounds/kick.wav" data-key="68"></audio>
+	<audio src="sounds/openhat.wav" data-key="70"></audio>
+	<audio src="sounds/boom.wav" data-key="71"></audio>
+	<audio src="sounds/ride.wav" data-key="72"></audio>
+	<audio src="sounds/snare.wav" data-key="74"></audio>
+	<audio src="sounds/tom.wav" data-key="75"></audio>
+	<audio src="sounds/tink.wav" data-key="76"></audio>
+	<audio src="sounds/joke-drum.mp3" data-key="32"></audio>
+	<!-- joke-drum license:
+		"	Free Sounds Library"
+			Free Sound Effects Site.
+			Licence: License: Attribution 4.0 International (CC BY 4.0). You are allowed to use sound effects free of charge and royalty free in your multimedia projects for commercial or non-commercial purposes.
+			http://www.freesoundslibrary.com -->
+</body>
+
+</html>
