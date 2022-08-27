@@ -1,11 +1,15 @@
 body{
 	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 	background-color: black;
-	background-image: url('./background.jpg');
-	background-repeat: no-repeat;
+	background: url('./background.jpg') bottom center no-repeat;
+	/* background-repeat: no-repeat; */
 	background-size: cover;
 	color: rgba(254, 254, 254, 0.9)
 
+}
+body, html{
+	margin: 0;
+	padding: 0;
 }
 .key {
 	display:flex;
@@ -14,6 +18,9 @@ body{
 .keys {
 	display: flex;
 	flex-wrap: wrap;
+	min-height:100vh;
+	align-items: center;
+	justify-content: center;
 }
 
 .keys * {
