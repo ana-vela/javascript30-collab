@@ -1,0 +1,36 @@
+body{
+	font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+	background-color: black;
+	background-image: url('./background.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	color: rgba(254, 254, 254, 0.9)
+
+}
+.key {
+	display:flex;
+	flex-wrap: nowrap;
+}
+.keys {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.keys * {
+	margin: 10px;
+}
+.keys .key {
+	border: 1px solid rgb(217, 217, 70);
+	padding: 10px;
+	background: rgba(93, 56, 56, 0.7);
+	border-radius: 8px;
+}
+
+footer{
+	font-family: roboto;
+	font-size: small;
+	
+}
+a:link, a:visited, a:hover, a:active {
+	color: rgba(254, 254, 254, 0.9)
+}
