@@ -9,3 +9,9 @@ If I'm not mistaken, that's because, at first, the engine interprets the attribu
 >The `<kbd>` HTML element represents a span of inline text denoting textual user
 >input from a text entry device."
 ["\<kbd>" - _MDN_.](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/kbd)
+
+### Methods and properties
+- "[HTMLMediaElement.play()](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/play)" - _MDN_
+- "[HTMLMediaElement.currentTime](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime)" - _MDN_
+- "[transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)" - _MDN_
+- "[Event.target](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)" - _MDN_
