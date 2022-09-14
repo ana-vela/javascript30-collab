@@ -15,3 +15,6 @@ If I'm not mistaken, that's because, at first, the engine interprets the attribu
 - "[HTMLMediaElement.currentTime](https://developer.mozilla.org/en-US/docs/Web/API/HTMLMediaElement/currentTime)" - _MDN_
 - "[transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)" - _MDN_
 - "[Event.target](https://developer.mozilla.org/en-US/docs/Web/API/Event/target)" - _MDN_
+
+## Additional Resources
+- [Reference tool to find JavaScript event keycode info](https://www.toptal.com/developers/keycode)
