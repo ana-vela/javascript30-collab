@@ -12,10 +12,23 @@
 		JS + CSS Clock
 
 		<div class="clock">
-			<div class="clock-face"> </div>
-			<div class="hand hour-hand"></div>
-			<div class="hand min-hand"></div>
-			<div class="hand second-hand"></div>
+			<div class="clock-face">
+				<div class="hand hour-hand"></div>
+				<div class="hand min-hand"></div>
+				<div class="hand second-hand"></div>
+			</div>
 		</div>
+		<script>
+			const secondHand = document.querySelector(".second-hand");
+			function setDate() {
+				const now = new Date();
+				const seconds = now.getSeconds();
+				const secondsDegrees = (seconds / 60) * 360 + 90;
+				secondHand.style.transform = `rotate(${secondsDegrees}deg)`;
+				console.log(seconds);
+				console.log(secondsDegrees);
+			}
+			setInterval(setDate, 1000);
+		</script>
 	</body>
 </html>
