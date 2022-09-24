@@ -1,0 +1,67 @@
+html {
+	background: #111 url(https://picsum.photos/id/1019/5472/3648/?blur=6) no-repeat;
+	background-size: cover;
+	text-align: center;
+}
+
+body {
+	margin: 0;
+	font-size: 2rem;
+	display: flex;
+	flex: 1;
+	min-height: 100vh;
+	align-items: center;
+}
+
+.clock-face {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transform: translateY(-3px);
+	/* account for the height of the clock hands */
+}
+
+.clock {
+	width: 20rem;
+	height: 20rem;
+	border: 20px solid rgba(15, 56, 102, 0.785);
+	border-radius: 50%;
+	margin: 50px auto;
+	position: relative;
+	padding: 2rem;
+	box-shadow:
+		0 0 0 4px rgba(0, 0, 0, 0.1),
+		inset 0 0 0 3px #3815974f,
+		inset 0 0 10px black,
+		0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.hand {
+	width: 50%;
+	height: 6px;
+	background: rgba(185, 185, 185, 0.811);
+	position: absolute;
+	top: 50%;
+	/* Align to clock's center */
+	transform-origin: 100%;
+	/* Offset default position to 12 */
+	/* transform: rotate(90deg); */
+	transition: all 0.1s;
+	transition-timing-function: cubic-bezier(1, -0.84, 0, 1.6);
+	border-top-left-radius: 60%;
+	border-top-right-radius: 20%;
+}
+
+.hour-hand {
+	width: 35%;
+	left: 15%;
+}
+
+.min-hand {
+	width: 45%;
+	left: 5%;
+}
+
+.sec-hand {
+	height: 4px;
+}
