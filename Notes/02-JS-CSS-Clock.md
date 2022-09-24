@@ -2,10 +2,9 @@
 
 ### Methods and Properties
 
-- [Date.prototype.getHours()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getHours) - MDN
-- [Date.prototype.getMinutes()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getMinutes) - MDN
-- [Date.prototype.getSeconds()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/getSeconds) - MDN
+- "[Global objects - Date](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date)" - _MDN_
+- [animation-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) - _MDN_
+- "[CSS - Background](https://developer.mozilla.org/en-US/docs/Web/CSS/background)" - _MDN_
 
-- [animation-timing-function](https://developer.mozilla.org/en-US/docs/Web/CSS/animation-timing-function) - MDN
-
-
+### Resources
+- [unsplash.it](https://unsplash.it) is now [picsum.photos](https://picsum.photos/) also providing 'blur' params.
