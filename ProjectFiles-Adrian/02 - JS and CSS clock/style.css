@@ -48,8 +48,7 @@ body {
 	/* transform: rotate(90deg); */
 	transition: all 0.1s;
 	transition-timing-function: cubic-bezier(1, -0.84, 0, 1.6);
-	border-top-left-radius: 60%;
-	border-top-right-radius: 20%;
+	border-radius: 60% 20% 20% 60%;
 }
 
 .hour-hand {
