@@ -72,6 +72,7 @@
 		const inputs = document.querySelectorAll('.controls input');
 
 		function handleUpdate() {
+			// Take units ('px') from current element's data-sizing attr. or set empty
 			const suffix = this.dataset.sizing || '';
 			// Update variable (varname, value)
 			document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
