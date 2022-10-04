@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Scoped CSS variables and JS</title>
+</head>
+
+<body>
+	<h2>Update CSS variables with <span class='hl'>JS</span></h2>
+
+	<div class="controls">
+		<label for="spacing">Spacing:</label>
+		<input type="range" id="spacing" name="spacing" min="10" max="100" value="10" data-sizing="px">
+		<label for="blur">Blur:</label>
+		<input type="range" id="blur" name="blur" min="0" max="20" value="10" data-sizing="px">
+		<label for="base">Base color:</label>
+		<input type="color" id="base" name="base" value="#ffc699">
+	</div>
+
+	<img src="https://source.unsplash.com/oeeyl50-ghw/900x600">
+
+	<ul class ="small">
+		<li class="small">- Photo by <a href="https://unsplash.com/photos/oeeyl50-ghw" target="_blank">Matt Drenth</a></li>
+		<cite>
+			- <a href="../../Notes/03-CSS-Variables.md"
+				target="_blank" rel="noopener noreferrer">Notes for this exercise</a>
+		</cite>
+	</ul>
+
+	<style>
+		:root {
+			--base: #444783;
+			--spacing: 6px;
+			--blur: 0px;
+		}
+
+		img {
+			padding: var(--spacing);
+			background: var(--base);
+			filter: blur(var(--blur));
+		}
+
+		.hl {
+			color: var(--base);
+		}
+
+		body {
+			text-align: center;
+			background: #05263f;
+			color: white;
+			font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, sans-serif;
+			font-weight: 80;
+			font-size: 30px;
+		}
+
+		.controls {
+			margin-bottom: 50px;
+		}
+
+		input {
+			width: 100px;
+		}
+
+		.small {
+			font-size: 16px;
+			list-style: none;
+		}
+	</style>
+
+	<script>
+		const inputs = document.querySelectorAll('.controls input');
+
+		function handleUpdate() {
+			const suffix = this.dataset.sizing || '';
+			// Update variable (varname, value)
+			document.documentElement.style.setProperty(`--${this.name}`, this.value + suffix)
+		}
+
+		// Update values/effects on input change
+		inputs.forEach(input => input.addEventListener('change', handleUpdate))
+		// Update values/effects on mousemove too
+		inputs.forEach(input => input.addEventListener('mousemove', handleUpdate))
+	</script>
+
+</body>
+
+</html>
