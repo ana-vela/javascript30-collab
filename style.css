@@ -1,14 +1,29 @@
 body {
 	background-color: #22292d;
 	color: white;
+	margin-top: 10rem;
 }
 
 h1 {
 	text-align: center;
+	font-size: 2.5rem;
+}
+a {
+	color: yellow;
+}
+
+a:hover {
+	color: gray;
+}
+
+main {
+	display: flex;
+	justify-content: center;
 }
 
 table,
 th,
 td {
 	border: 1px solid black;
+	font-size: 1.5rem;
 }
