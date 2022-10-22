@@ -2,6 +2,7 @@
 
 ### Resources
 - "[transform](https://developer.mozilla.org/en-US/docs/Web/CSS/transform)" - _MDN_
+- "[transition](https://developer.mozilla.org/en-US/docs/Web/CSS/transition)" - _MDN_
 - "[CSS Flexible Box Layout](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout)" - _MDN_
 - [Coyier, Cris. “Multiple Class / ID and Class Selectors”](https://css-tricks.com/multiple-class-id-selectors/) - _CSS-Tricks_
 - [Coyier, Cris. “A Complete Guide to Flexbox ”](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) - _CSS-Tricks_
