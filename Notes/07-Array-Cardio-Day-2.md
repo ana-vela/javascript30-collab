@@ -8,7 +8,7 @@ For the last exercise of the challenge, the `delete` operator can also  be used 
 
 - "[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)" - _MDN_
 
-- "[delete operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete)" - _MDN_
+- "[delete operator - Deleting array elements](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/delete#deleting_array_elements)" - _MDN_
 
 
 
