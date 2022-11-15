@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Console Tricks!</title>
+</head>
+<style>
+  .green {
+    color: green;
+    font-size: 20px;
+    text-shadow: 0 1px 0;
+  }
+</style>
+<body>
+  <p>Click the following paragraph to toggle style properties:</p>
+  <p id="green">×BREAK×DOWN×</p>
+  <hr>
+
+  <script>
+    
+    const p = document.querySelector('#green');
+    function makeGreen() {
+      p.classList.toggle('green');
+    }
+    p.addEventListener('click', makeGreen);
+
+
+    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+
+
+    // Regular
+
+    // Interpolated
+
+    // Styled
+
+    // warning!
+
+    // Error :|
+
+    // Info
+
+    // Testing
+
+    // clearing
+
+    // Viewing DOM Elements
+
+    // Grouping together
+
+    // counting
+
+    // timing
+
+  </script>
+</body>
+</html>
