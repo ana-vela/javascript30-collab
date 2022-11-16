@@ -1,57 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Console Tricks!</title>
-</head>
-<style>
-  .green {
-    color: green;
-    font-size: 20px;
-    text-shadow: 0 1px 0;
-  }
-</style>
-<body>
-  <p>Click the following paragraph to toggle style properties:</p>
-  <p id="green">×BREAK×DOWN×</p>
-  <hr>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Console tricks!</title>
+	</head>
+	<style>
+		.green {
+			color: green;
+			font-size: 20px;
+			text-shadow: 0 1px 0;
+		}
+	</style>
+	<body>
+		<p>Click the following paragraph to toggle style properties:</p>
+		<p id="green">×BREAK×DOWN×</p>
+		<hr />
+		<div id="buttons">
+			<img
+				src="./buttons-meme.jpg"
+				alt="Toy story meme about buttons showing everywhere"
+			/>
+		</div>
 
-  <script>
-    
-    const p = document.querySelector('#green');
-    function makeGreen() {
-      p.classList.toggle('green');
-    }
-    p.addEventListener('click', makeGreen);
+		<script>
+			const p = document.querySelector('#green');
+			function makeGreen() {
+				p.classList.toggle('green');
+			}
+			p.addEventListener('click', makeGreen);
 
+			const dogs = [
+				{ name: 'Snickers', age: 2 },
+				{ name: 'hugo', age: 8 },
+			];
 
-    const dogs = [{ name: 'Snickers', age: 2 }, { name: 'hugo', age: 8 }];
+			// Buttons
+			const buttons = document.querySelector('#buttons');
 
+			// Regular
+			const cLog = document.createElement('button');
+			cLog.textContent = 'console.log()';
+			cLog.addEventListener('click', () =>
+				console.log('This is a console log')
+			);
+			buttons.appendChild(cLog);
 
-    // Regular
+			// Interpolated
+			const cInterpolated = document.createElement('button');
+			cInterpolated.textContent = '%s -> strings';
+			cInterpolated.addEventListener('click', () =>
+				console.log('An emoji: %s', '👍')
+			);
 
-    // Interpolated
+			// Styled
+			const cInterpolatedB = document.createElement('button');
+			cInterpolatedB.textContent = '%c -> CSS styled';
+			cInterpolatedB.addEventListener('click', () =>
+				console.log(
+					'%c Styled message',
+					'text-shadow: 1px 1px 2px #fff; color: #aaa'
+				)
+			);
 
-    // Styled
+			// Warning
+			const cWarn = document.createElement('button');
+			cWarn.textContent = 'console.warn()';
+			cWarn.addEventListener('click', () => console.warn('Warning message'));
 
-    // warning!
+			// Error
+			const cError = document.createElement('button');
+			cError.textContent = 'console.error()';
+			cError.addEventListener('click', () => console.error('Error message'));
 
-    // Error :|
+			// Info
+			const cInfo = document.createElement('button');
+			cInfo.textContent = 'console.info()';
+			cInfo.addEventListener('click', () => console.info('Info message'));
 
-    // Info
+			// Testing
+			const cAssert = document.createElement('button');
+			cAssert.textContent = 'console.assert()';
+			cAssert.addEventListener('click', () =>
+				console.assert(
+					buttons.classList.contains('testClass'),
+					'testClass class not found'
+				)
+			);
 
-    // Testing
+			// clearing
+			const cClear = document.createElement('button');
+			cClear.textContent = 'console.clear()';
+			cClear.addEventListener('click', () => console.clear());
 
-    // clearing
+			// Viewing DOM Elements
+			const cLogEle = document.createElement('button');
+			cLogEle.textContent = 'console.log(buttons)';
+			cLogEle.addEventListener('click', () => console.log(buttons));
 
-    // Viewing DOM Elements
+			const cDirEle = document.createElement('button');
+			cDirEle.textContent = 'console.dir(buttons)';
+			cDirEle.addEventListener('click', () => console.dir(buttons));
 
-    // Grouping together
+			// Grouping together
 
-    // counting
+			// counting
 
-    // timing
+			// timing
 
-  </script>
-</body>
+			// Add buttons to div
+			buttons.append(
+				cLog,
+				cInterpolated,
+				cInterpolatedB,
+				cWarn,
+				cError,
+				cInfo,
+				cAssert,
+				cClear
+			);
+		</script>
+	</body>
 </html>
