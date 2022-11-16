@@ -10,16 +10,24 @@
 			font-size: 20px;
 			text-shadow: 0 1px 0;
 		}
+		#buttons > button {
+			display: block;
+			margin-bottom: 6px;
+			padding: 6px 12px;
+			background-color: rgb(255, 241, 226);
+			border-radius: 4px;
+		}
 	</style>
 	<body>
 		<p>Click the following paragraph to toggle style properties:</p>
 		<p id="green">×BREAK×DOWN×</p>
 		<hr />
+		<img
+			src="./buttons-meme.jpg"
+			alt="Toy story meme about buttons showing everywhere"
+		/>
 		<div id="buttons">
-			<img
-				src="./buttons-meme.jpg"
-				alt="Toy story meme about buttons showing everywhere"
-			/>
+			<br>
 		</div>
 
 		<script>
@@ -94,18 +102,56 @@
 
 			// Viewing DOM Elements
 			const cLogEle = document.createElement('button');
-			cLogEle.textContent = 'console.log(buttons)';
+			cLogEle.textContent = 'console.log(#buttons)';
 			cLogEle.addEventListener('click', () => console.log(buttons));
 
 			const cDirEle = document.createElement('button');
-			cDirEle.textContent = 'console.dir(buttons)';
+			cDirEle.textContent = 'console.dir(#buttons)';
 			cDirEle.addEventListener('click', () => console.dir(buttons));
-
+			
 			// Grouping together
+			
+			const cGroup = document.createElement('button');
+			cGroup.textContent = 'console.groupCollapsed()';
+			cGroup.addEventListener('click', () => {
+
+				dogs.forEach(dog => {
+					console.groupCollapsed(`${dog.name}`);
+						console.log(`${dog.name}`);
+						console.log(`${dog.age}`);
+					console.groupEnd(`${dog.name}`);
+				});
+				console.log('Table formatted:');
+				console.table(dogs);
+			});
 
 			// counting
+			const cCount = document.createElement('button');
+			cCount.textContent = 'console.count()';
+			cCount.addEventListener('click', () => {
+				console.count('counterOne')
+				console.count('counterOne')
+				console.count('counterTwo')
+				console.count('counterTwo')
+				console.count('counterOne')
+				console.count('counterOne')
+				console.count('counterTwo')
+			});
 
 			// timing
+			const cTime = document.createElement('button');
+			cTime.textContent = 'console.time()';
+			cTime.addEventListener('click', () => {
+				// Start the timer
+				console.time('Fetch AdrianSkar data');
+				fetch('https://api.github.com/users/adrianskar')
+					.then(res => res.json())
+					.then(data => {
+						// End the timer
+						console.timeEnd('Fetch AdrianSkar data');
+						console.log(`User id is ${data.id}`);
+					})
+			});
 
 			// Add buttons to div
 			buttons.append(
@@ -116,7 +162,8 @@
 				cError,
 				cInfo,
 				cAssert,
-				cClear
+				cClear, 
+				cLogEle, cDirEle, cGroup, cCount, cTime
 			);
 		</script>
 	</body>
