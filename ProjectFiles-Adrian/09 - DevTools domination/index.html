@@ -27,7 +27,7 @@
 			alt="Toy story meme about buttons showing everywhere"
 		/>
 		<div id="buttons">
-			<br>
+			<br />
 		</div>
 
 		<script>
@@ -108,17 +108,16 @@
 			const cDirEle = document.createElement('button');
 			cDirEle.textContent = 'console.dir(#buttons)';
 			cDirEle.addEventListener('click', () => console.dir(buttons));
-			
+
 			// Grouping together
-			
+
 			const cGroup = document.createElement('button');
 			cGroup.textContent = 'console.groupCollapsed()';
 			cGroup.addEventListener('click', () => {
-
 				dogs.forEach(dog => {
 					console.groupCollapsed(`${dog.name}`);
-						console.log(`${dog.name}`);
-						console.log(`${dog.age}`);
+					console.log(`${dog.name}`);
+					console.log(`${dog.age}`);
 					console.groupEnd(`${dog.name}`);
 				});
 				console.log('Table formatted:');
@@ -129,13 +128,13 @@
 			const cCount = document.createElement('button');
 			cCount.textContent = 'console.count()';
 			cCount.addEventListener('click', () => {
-				console.count('counterOne')
-				console.count('counterOne')
-				console.count('counterTwo')
-				console.count('counterTwo')
-				console.count('counterOne')
-				console.count('counterOne')
-				console.count('counterTwo')
+				console.count('counterOne');
+				console.count('counterOne');
+				console.count('counterTwo');
+				console.count('counterTwo');
+				console.count('counterOne');
+				console.count('counterOne');
+				console.count('counterTwo');
 			});
 
 			// timing
@@ -150,11 +149,12 @@
 						// End the timer
 						console.timeEnd('Fetch AdrianSkar data');
 						console.log(`User id is ${data.id}`);
-					})
+					});
 			});
 
-			// Add buttons to div
-			buttons.append(
+			// Frag
+			let fragment = new DocumentFragment();
+			fragment.append(
 				cLog,
 				cInterpolated,
 				cInterpolatedB,
@@ -162,9 +162,16 @@
 				cError,
 				cInfo,
 				cAssert,
-				cClear, 
-				cLogEle, cDirEle, cGroup, cCount, cTime
+				cClear,
+				cLogEle,
+				cDirEle,
+				cGroup,
+				cCount,
+				cTime
 			);
+
+			// Add buttons to div
+			buttons.append(fragment);
 		</script>
 	</body>
 </html>
