@@ -99,9 +99,8 @@
 
 			const checkOthers = e => {
 				const currItems = Array.from(document.querySelectorAll('.item'));
-
 				// Shift key only
-				if (e.shiftKey) {
+				if (e.shiftKey && e.target.checked) {
 					const thisInput = e.currentTarget.firstElementChild;
 					const uniquePara = e.currentTarget.lastElementChild.textContent;
 
@@ -113,7 +112,6 @@
 								i.lastElementChild.textContent !== uniquePara
 						)
 					) {
-
 						// Find and order checked items wihin the list
 						const startIndex = currItems.findIndex(first => {
 							return first.firstElementChild.checked === true;
