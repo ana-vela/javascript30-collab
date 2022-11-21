@@ -99,12 +99,12 @@
 
 			const checkOthers = e => {
 				const currItems = Array.from(document.querySelectorAll('.item'));
-				// Shift key only
+				// Shift key and checked only
 				if (e.shiftKey && e.target.checked) {
 					const thisInput = e.currentTarget.firstElementChild;
 					const uniquePara = e.currentTarget.lastElementChild.textContent;
 
-					// There's a checked box that's not the current one
+					// Look for a checked box that's not the current one
 					if (
 						currItems.some(
 							i =>
@@ -112,7 +112,7 @@
 								i.lastElementChild.textContent !== uniquePara
 						)
 					) {
-						// Find and order checked items wihin the list
+						// Find and order checked items within the list
 						const startIndex = currItems.findIndex(first => {
 							return first.firstElementChild.checked === true;
 						});
@@ -121,7 +121,7 @@
 						});
 						const orderedIdx = [startIndex, endIndex].sort();
 
-						// Check all within startIndex and endIndex
+						// Check all boxes within startIndex and endIndex
 						currItems.forEach((item, idx) =>{
 							if (idx >= orderedIdx[0] && idx <= orderedIdx[1]) {
 								item.firstElementChild.checked = true;
