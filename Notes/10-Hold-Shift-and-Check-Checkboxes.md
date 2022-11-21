@@ -3,7 +3,9 @@
 ## Bug found!
 
 If a user uses the `Shift` key while selecting the first element, Wes' function checks all the boxes until the end of the list.
+
 ![Gif recording of bug found at source solution](assets/10-bug.gif)
+
 +1 to my [long, cumbersome solution](../ProjectFiles-Adrian/10%20-%20Hold%20Shift%20and%20check%20checkboxes/index.html). :smile:
 
 ## Adjacent sibling combinator
