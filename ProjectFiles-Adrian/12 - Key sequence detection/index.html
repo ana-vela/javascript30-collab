@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Key detection</title>
+</head>
+<body>
+  <style>
+    body {
+      background-color: black;
+    }
+    .matrix {
+      background-image: url(./matrix.gif);
+    }
+  </style>
+
+<script>
+  const secret = 'matrix';
+  let pressed = [];
+  document.addEventListener('keyup', e =>{
+    pressed.push(e.key);
+    // splice() returns an arr containing deleted elements
+    // pressed.splice(start: -7, deleteCount: 0)
+    pressed.splice(-secret.length-1, pressed.length - secret.length)
+    console.log(pressed.join(''));
+    if (pressed.join('').includes(secret)) {
+      document.body.classList.add('matrix');
+    }
+  })
+</script>
+</body>
+</html>

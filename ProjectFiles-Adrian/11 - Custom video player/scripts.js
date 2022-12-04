@@ -43,7 +43,7 @@ function toggleFullscreen() {
 function toggleVolume() {
 	if (!video.muted) {
 		video.muted = true;
-		muteButton.textContent = "\uD83D\uDD0A";
+		muteButton.textContent = '\uD83D\uDD0A';
 	} else {
 		video.muted = false;
 		muteButton.textContent = '\uD83D\uDD07';
@@ -88,3 +88,19 @@ progress.addEventListener('click', scrub);
 progress.addEventListener('mousemove', e => mousedown && scrub(e));
 progress.addEventListener('mousedown', () => (mousedown = true));
 progress.addEventListener('mouseup', () => (mousedown = false));
+
+const scrollButton = document.createElement('button');
+scrollButton.style = `
+	position: fixed;
+	background-color: rgba(250, 250, 250, 0.6);
+	color: black;
+	font-weight: bold;
+	font-size: 1rem;
+	bottom: 2rem;
+	right: 2rem;
+	padding: 1rem;
+	border-radius: 3px;
+	font-family: Noto Sans,Arial,sans-serif;
+	`;
+scrollButton.textContent = '↓';
+document.body.appendChild(scrollButton);
