@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>JavaScript reference vs copy</title>
+	</head>
+	<body>
+		<script>
+			/// Primitives are assigned by value
+
+			let [str, num, bool] = ['abc', 123, true];
+			console.log({ str, num, bool });
+			let [str2, num2, bool2] = [str, num, bool];
+			console.log({ str2, num2, bool2 });
+			[str2, num2, bool2] = ['modified', 333, false];
+			console.log({ str2, num2, bool2 });
+			console.log({ str, num, bool });
+
+			/// Arrays are assigned by reference (point in memory that holds data)
+			const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
+
+			const team = players;
+			console.log({ players, team });
+			team[3] = 'Adrian';
+			console.log({ players, team });
+
+			// Copying arrays (shallow):
+			const team2 = players.slice();
+			team2[3] = 'player2';
+			console.log({ players, team2 });
+			// Also:
+
+			// const team3 = [].concat(players);
+			// const team4 = Array.from(players);
+			// const team5 = Array.of(...players);
+			// const team6 = [...players]; // Array(...players) || new Array(...players)
+
+			/// Objects are also assigned by reference (point in memory that holds data)
+			const person = {
+				name: 'Wes Bos',
+				age: 80,
+				socials: {
+					twitter: '@wesbos',
+					facebook: 'wesbos.dev',
+				},
+			};
+
+			// Copying objects (shallow)
+			const personCopy = Object.assign({}, person, { newProp: true });
+			// Also:
+			// const personCopy2 = Object(person); // === new Object(person)const personCopy3 = Object(person);
+			// const personCopy3 = {...person}; // Now available
+
+			console.log(personCopy);
+			personCopy.newProp = false;
+			console.log({ person, personCopy });
+
+			const personCopy2 = Object(person);
+			console.log(personCopy2);
+
+			// personCopy2.socials = { none: true };
+			// console.log(person);
+
+			console.log({ ...person });
+
+			/// Deep clone?
+			//______ Using Object.create(obj);
+			// const personCopy4 = Object.create(person); // Not own properties!!!
+			// console.log(personCopy4.socials);
+			// personCopy4.socials = {newSocials: true};
+			// console.log(person.socials, personCopy4);
+
+			// console.log(Object.getOwnPropertyNames(personCopy4));
+
+			//____ Using JSON methods
+			const jsonPerson = JSON.parse(JSON.stringify(person));
+			console.log(jsonPerson);
+
+			//____ Using structuredClone(obj) -> Only in Node and browsers
+			// console.log(structuredClone(person));
+		</script>
+	</body>
+</html>
