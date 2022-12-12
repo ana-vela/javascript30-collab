@@ -48,24 +48,21 @@
 			// Copying objects (shallow)
 			const personCopy = Object.assign({}, person, { newProp: true });
 			// Also:
-			// const personCopy2 = Object(person); // === new Object(person)const personCopy3 = Object(person);
+			// const personCopy2 = Object(person); // === new Object(person)
 			// const personCopy3 = {...person}; // Now available
 
 			console.log(personCopy);
 			personCopy.newProp = false;
 			console.log({ person, personCopy });
 
-			const personCopy2 = Object(person);
-			console.log(personCopy2);
-
-			// personCopy2.socials = { none: true };
-			// console.log(person);
+			// personCopy.socials = { none: true };
+			// console.log(personCopy);
 
 			console.log({ ...person });
 
 			/// Deep clone?
-			//______ Using Object.create(obj);
-			// const personCopy4 = Object.create(person); // Not own properties!!!
+			//______ Using Object.create(obj); // Not own properties!!!
+			// const personCopy4 = Object.create(person);
 			// console.log(personCopy4.socials);
 			// personCopy4.socials = {newSocials: true};
 			// console.log(person.socials, personCopy4);
