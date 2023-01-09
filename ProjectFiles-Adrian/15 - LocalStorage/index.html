@@ -51,6 +51,9 @@
 				<input type="text" name="item" placeholder="Item name" required />
 				<input type="submit" value="+ Add item" />
 			</form>
+			<p></p>
+			<button id="clear-list">Clear list</button>
+			<button id="clear-done">Clear done</button>
 		</div>
 
 		<script>
@@ -58,42 +61,45 @@
 			const itemsList = document.querySelector('ul.plates');
 			const items = JSON.parse(localStorage.getItem('items')) || [];
 
-
 			function addItem(e) {
 				// Prevent page refresh
 				e.preventDefault();
 
-				// Retrieve text and store it 
+				// Retrieve text and store it
 				const text = this.querySelector('[name=item]').value;
 				const item = {
-					text, 
-					done: false
+					text,
+					done: false,
 				};
-				items.push(item)
-				populateList(items, itemsList)
-				localStorage.setItem('items', JSON.stringify(items))
+				items.push(item);
+				populateList(items, itemsList);
+				localStorage.setItem('items', JSON.stringify(items));
 
 				// Reset form
 				this.reset();
 			}
 
-			function populateList(plates = [], platesList){
-				platesList.innerHTML = plates.map((plate, idx) =>{
-					return `
+			function populateList(plates = [], platesList) {
+				platesList.innerHTML = plates
+					.map((plate, idx) => {
+						return `
 					<li>
-						<input type="checkbox" data-index=${idx} id="item${idx}" ${plate.done ? 'checked' : ''}>
+						<input type="checkbox" data-index=${idx} id="item${idx}" ${
+							plate.done ? 'checked' : ''
+						}>
 						<label for="item${idx}">${plate.text}</label>
 					</li>
-					`
-				}).join('');
+					`;
+					})
+					.join('');
 			}
 
-			function toggleDone(e){
+			function toggleDone(e) {
 				// if (!e.target.matches('[type=checkbox]')) return;
 				if (!e.target.matches('input')) return;
 				// Element
 				const el = e.target;
-				// data-index attribute value 
+				// data-index attribute value
 				const index = el.dataset.index;
 
 				// Reverse its status
@@ -105,8 +111,42 @@
 			}
 
 			addItems.addEventListener('submit', addItem);
-			itemsList.addEventListener('click', toggleDone)
-			populateList(items, itemsList)
+			itemsList.addEventListener('click', toggleDone);
+			populateList(items, itemsList);
+
+			/// Extra
+			// Clear done
+			const clearDoneBtn = document.querySelector('#clear-done');
+			clearDoneBtn.addEventListener('click', clearDone);
+			function clearDone() {
+				// Reset all done
+				items.forEach(item => {
+					if (item.done) item.done = false;
+				});
+				// Save list
+				localStorage.setItem('items', JSON.stringify(items));
+				populateList(items, itemsList);
+				// Repopulate
+			}
+			// Clear list
+			const clearListBtn = document.querySelector('#clear-list');
+			clearListBtn.addEventListener('click', clearList);
+			function clearList(){
+				// Do nothing if already empty
+				if (items.length === 0) return
+
+				/// Dirty way
+				// items.length = 0;
+				// localStorage.setItem('items', JSON.stringify(items))
+
+				// Delete all
+				// localStorage.clear();
+
+				// Delete items only
+				localStorage.removeItem('items')
+
+				populateList([], itemsList);
+			}
 		</script>
 	</body>
 </html>
