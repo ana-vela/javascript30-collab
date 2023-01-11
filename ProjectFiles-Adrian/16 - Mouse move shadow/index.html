@@ -25,7 +25,7 @@
 				display: flex;
 				justify-content: center;
 				align-items: center;
-				color: black;
+				color: #000000cf;
 			}
 
 			h1 {
@@ -37,7 +37,8 @@
 		<script>
 			const hero = document.querySelector('.hero');
 			const h1 = hero.querySelector('h1');
-			const walk = 50; // 50 px
+			const walk = 66; // 50 px
+      let hue = 0;
 
 			function shadow(e) {
 				// .hero dimensions
@@ -65,8 +66,13 @@
         // ${yWalk *-1}px ${xWalk}px 0 rgba(0,0,255,0.7),
         // ${yWalk}px ${xWalk}px 0 rgba(0,255,0,0.7)
         // `
+
+        // Apply hue color change from 8th exercise
+        hue++;
+				if (hue >= 360) hue = 0;
+
         h1.style.textShadow = `
-        ${xWalk}px ${yWalk}px 0 rgba(255, 201, 201, 0.7)
+        ${xWalk}px ${yWalk}px 5px hsl(${hue}, 100%, 50%)
         `
 			}
 
