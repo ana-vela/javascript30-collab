@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Mouse shadow</title>
+	</head>
+	<body>
+		<div class="hero">
+			<h1 contenteditable>🔥WOAH!</h1>
+		</div>
+
+		<style>
+			html {
+				color: black;
+				font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+					sans-serif;
+			}
+
+			body {
+				margin: 0;
+			}
+
+			.hero {
+				min-height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				color: black;
+			}
+
+			h1 {
+				text-shadow: 10px 10px 0 rgba(0, 0, 0, 1);
+				font-size: 80px;
+			}
+		</style>
+
+		<script>
+			const hero = document.querySelector('.hero');
+			const h1 = hero.querySelector('h1');
+			const walk = 50; // 50 px
+
+			function shadow(e) {
+				// .hero dimensions
+				const { offsetWidth: width, offsetHeight: height } = hero;
+				// mouse pointer position
+				let { offsetX: x, offsetY: y } = e;
+
+				// If its the h1 that triggered the event sum the pointer distance to
+				// it to the distance between the h1 and its parent (hero)
+				if (this !== e.target) {
+					x = x + e.target.offsetLeft;
+					y = y + e.target.offsetTop;
+				}
+        // Distance ranges for shadows
+				const xWalk = Math.round(((x / width) * walk) - (walk / 2));
+				const yWalk = Math.round(((y / height) * walk) - (walk / 2));
+
+        // console.log(x, y, xWalk, yWalk);
+
+        // h1.style.textShadow = `
+        // ${xWalk}px ${yWalk}px 0 rgba(200,0,200,0.7),
+        // ${xWalk * -1}px ${yWalk}px 0 rgba(0,200,0,0.7),
+        // ${xWalk}px ${yWalk * -1}px 0 rgba(0,0,200,0.7),
+        // ${yWalk}px ${xWalk * -1}px 0 rgba(200,0,0,0.7),
+        // ${yWalk *-1}px ${xWalk}px 0 rgba(0,0,255,0.7),
+        // ${yWalk}px ${xWalk}px 0 rgba(0,255,0,0.7)
+        // `
+        h1.style.textShadow = `
+        ${xWalk}px ${yWalk}px 0 rgba(255, 201, 201, 0.7)
+        `
+			}
+
+			hero.addEventListener('mousemove', shadow);
+		</script>
+	</body>
+</html>
