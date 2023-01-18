@@ -60,13 +60,13 @@
 				'An Old Dog',
 			];
 			// Regex for the articles
-			const regex = /^a\s|^an\s|^the\s/i;
+			const artRegex = /^a\s|^an\s|^the\s/i;
 
 			// Sort bands
-			let sortedBands = bands.sort((a, b) => {
+			const sortedBands = bands.sort((a, b) => {
 				// Strip articles
-				let stripA = a.replace(regex, '');
-				let stripB = b.replace(regex, '');
+				const stripA = a.replace(artRegex, '');
+				const stripB = b.replace(artRegex, '');
 
 				// return stripA > stripB ?  1:  -1;
 				return stripA.localeCompare(stripB, 'en', { ignorePunctuation: true });
