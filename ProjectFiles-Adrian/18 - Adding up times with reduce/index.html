@@ -66,39 +66,65 @@
 			<li data-time="4:04">Video 58</li>
 		</ul>
 		<script>
-			let dataTimes = document.querySelectorAll('li[data-time]');
-			let totalSecs = 0;
+			const timeNodes = Array.from(document.querySelectorAll('li[data-time]'));
 
-			// searched for a function to sum times:
-			function timestrToSec(timestr) {
-				var parts = timestr.split(':');
-				return parts[0] * 60 + +parts[1];
-			}
-			dataTimes.forEach(li => {
-				// console.log(timestrToSec(li.dataset.time));
-				totalSecs += timestrToSec(li.dataset.time);
-			});
-			console.log(totalSecs);
+			const totalSeconds = timeNodes
+				// get data-time attr values
+				.map(node => node.dataset.time)
+				// put mm:ss into total seconds
+				.map(timeCode => {
+					const [mins, secs] = timeCode.split(':').map(parseFloat);
+					return mins * 60 + secs;
+				})
+				.reduce((total, currSecs) => (total += currSecs));
 
-			//searched for a function to turn seconds to a time str:
-			function sec2time(timeInSeconds) {
-				let pad = function (num, size) {
-						return ('000' + num).slice(size * -1);
-					},
-					time = parseFloat(timeInSeconds).toFixed(3),
-					hours = Math.floor(time / 60 / 60),
-					minutes = Math.floor(time / 60) % 60,
-					seconds = Math.floor(time - minutes * 60);
+			console.log(`totalSeconds: ${totalSeconds}`);
 
-				return (
-					pad(hours, 2) +
-					':' +
-					pad(minutes, 2) +
-					':' +
-					pad(seconds, 2)
-				);
-			}
-			   console.log(sec2time(totalSecs));
+			let secondsLeft = totalSeconds;
+			// get only whole hours and save what's left to secondsLeft
+			console.log(secondsLeft);
+			const hours = Math.floor(secondsLeft/3600);
+			secondsLeft = Math.floor(secondsLeft%3600);
+			// same for minutes and seconds left
+			const minutes = Math.floor(secondsLeft/60);
+			secondsLeft = Math.floor(secondsLeft%60);
+			console.log(`Total time: ${hours}:${minutes}:${secondsLeft}`);
+
+			//________________________________________________________________________
+
+			// /// Own attempt
+			// let dataTimes = document.querySelectorAll('li[data-time]');
+			// let totalSecs = 0;
+			// // searched for a function to sum times:
+			// function timestrToSec(timestr) {
+			// 	var parts = timestr.split(':');
+			// 	return parts[0] * 60 + +parts[1];
+			// }
+			// dataTimes.forEach(li => {
+			// 	// console.log(timestrToSec(li.dataset.time));
+			// 	totalSecs += timestrToSec(li.dataset.time);
+			// });
+			// console.log(totalSecs);
+
+			// //searched for a function to turn seconds to a time str:
+			// function sec2time(timeInSeconds) {
+			// 	let pad = function (num, size) {
+			// 			return ('000' + num).slice(size * -1);
+			// 		},
+			// 		time = parseFloat(timeInSeconds).toFixed(3),
+			// 		hours = Math.floor(time / 60 / 60),
+			// 		minutes = Math.floor(time / 60) % 60,
+			// 		seconds = Math.floor(time - minutes * 60);
+
+			// 	return (
+			// 		pad(hours, 2) +
+			// 		':' +
+			// 		pad(minutes, 2) +
+			// 		':' +
+			// 		pad(seconds, 2)
+			// 	);
+			// }
+			//    console.log(sec2time(totalSecs));
 		</script>
 	</body>
 </html>
