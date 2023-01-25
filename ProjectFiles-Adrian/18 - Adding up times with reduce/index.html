@@ -66,29 +66,51 @@
 			<li data-time="4:04">Video 58</li>
 		</ul>
 		<script>
+			// Single reduce
 			const timeNodes = Array.from(document.querySelectorAll('li[data-time]'));
 
-			const totalSeconds = timeNodes
-				// get data-time attr values
-				.map(node => node.dataset.time)
-				// put mm:ss into total seconds
-				.map(timeCode => {
-					const [mins, secs] = timeCode.split(':').map(parseFloat);
-					return mins * 60 + secs;
-				})
-				.reduce((total, currSecs) => (total += currSecs));
-
-			console.log(`totalSeconds: ${totalSeconds}`);
+			const totalSeconds = timeNodes.reduce((total, node) => {
+				const timeCode = node.dataset.time;
+				const [mins, secs] = timeCode.split(':').map(parseFloat);
+				total += mins * 60 + secs;
+				return total;
+			}, 0);
 
 			let secondsLeft = totalSeconds;
 			// get only whole hours and save what's left to secondsLeft
 			console.log(secondsLeft);
-			const hours = Math.floor(secondsLeft/3600);
-			secondsLeft = Math.floor(secondsLeft%3600);
+			const hours = Math.floor(secondsLeft / 3600);
+			secondsLeft = Math.floor(secondsLeft % 3600);
 			// same for minutes and seconds left
-			const minutes = Math.floor(secondsLeft/60);
-			secondsLeft = Math.floor(secondsLeft%60);
+			const minutes = Math.floor(secondsLeft / 60);
+			secondsLeft = Math.floor(secondsLeft % 60);
 			console.log(`Total time: ${hours}:${minutes}:${secondsLeft}`);
+
+			//________________________________________________________________________
+			// Original exercise
+
+			// const timeNodes = Array.from(document.querySelectorAll('li[data-time]'));
+			// const totalSeconds = timeNodes
+			// 	// get data-time attr values
+			// 	.map(node => node.dataset.time)
+			// 	// put mm:ss into total seconds
+			// 	.map(timeCode => {
+			// 		const [mins, secs] = timeCode.split(':').map(parseFloat);
+			// 		return mins * 60 + secs;
+			// 	})
+			// 	.reduce((total, currSecs) => (total += currSecs));
+
+			// console.log(`totalSeconds: ${totalSeconds}`);
+
+			// let secondsLeft = totalSeconds;
+			// // get only whole hours and save what's left to secondsLeft
+			// console.log(secondsLeft);
+			// const hours = Math.floor(secondsLeft/3600);
+			// secondsLeft = Math.floor(secondsLeft%3600);
+			// // same for minutes and seconds left
+			// const minutes = Math.floor(secondsLeft/60);
+			// secondsLeft = Math.floor(secondsLeft%60);
+			// console.log(`Total time: ${hours}:${minutes}:${secondsLeft}`);
 
 			//________________________________________________________________________
 
