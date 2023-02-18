@@ -3,6 +3,7 @@ const canvas = document.querySelector('.photo');
 const ctx = canvas.getContext('2d');
 const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
+const photoButton = document.querySelector('#take-photo');
 
 function getVideo() {
 	// Get video feed from camera
@@ -35,19 +36,21 @@ function paintToCanvas() {
 	}, 160);
 }
 
-function takePhoto(){
+function takePhoto() {
 	// play sound
 	snap.currentTime = 0;
-	snap.play()
+	snap.play();
 	// data out of the canvas and into a link
 	const data = canvas.toDataURL('image/jpeg');
 	const link = document.createElement('a');
 	link.href = data;
 	link.setAttribute('download', 'handsome');
-	link.textContent = 'Download image';
+	link.innerHTML = `<img src=${data} alt="Handsome man" />`;
 	// add link to list start
 	strip.insertBefore(link, strip.firstChild);
 }
 
 getVideo();
 video.addEventListener('canplay', paintToCanvas);
+// Add a proper listener for takePhoto instead of relying on onClick evts
+photoButton.addEventListener('click', takePhoto);
