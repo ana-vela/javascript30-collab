@@ -11,6 +11,7 @@ function getVideo() {
 		.getUserMedia({ video: true, audio: false })
 		.then(localMediaStream => {
 			// console.log(localMediaStream);
+			
 			// Deprecated
 			// video.src = window.URL.createObjectURL(localMediaStream);
 
@@ -45,7 +46,7 @@ function paintToCanvas() {
 		// Trick to show previous frames using transparency:
 		// ctx.globalAlpha = 0.6;
 
-		// Output image
+		// Paint image using modified data
 		ctx.putImageData(pixels, 0, 0);
 	}, 160);
 }
