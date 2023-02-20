@@ -1,4 +1,5 @@
 {
 	"emmet.showSuggestionsAsSnippets": true,
-	"emmet.useInlineCompletions": true
+	"emmet.useInlineCompletions": true,
+	"liveServer.settings.port": 5501
 }
