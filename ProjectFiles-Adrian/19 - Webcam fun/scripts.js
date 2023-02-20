@@ -5,22 +5,32 @@ const strip = document.querySelector('.strip');
 const snap = document.querySelector('.snap');
 const photoButton = document.querySelector('#take-photo');
 
-function getVideo() {
-	// Get video feed from camera
-	navigator.mediaDevices
-		.getUserMedia({ video: true, audio: false })
-		.then(localMediaStream => {
-			// console.log(localMediaStream);
-			// Deprecated
-			// video.src = window.URL.createObjectURL(localMediaStream);
+// function getVideo() {
+// 	// Get video feed from camera
+// 	navigator.mediaDevices
+// 		.getUserMedia({ video: true, audio: false })
+// 		.then(localMediaStream => {
+// 			// console.log(localMediaStream);
+			
+// 			// Deprecated
+// 			// video.src = window.URL.createObjectURL(localMediaStream);
 
-			// set the feed as src and play it (otherwise it'll stay still)
-			video.srcObject = localMediaStream;
-			video.play();
-		})
-		.catch(err => {
-			console.error(`Error: ${err}`);
-		});
+// 			// set the feed as src and play it (otherwise it'll stay still)
+// 			video.srcObject = localMediaStream;
+// 			video.play();
+// 		})
+// 		.catch(err => {
+// 			console.error(`Error: ${err}`);
+// 		});
+// }
+
+async function getVideo() {
+	const mediaStream = await navigator.mediaDevices.getUserMedia({
+		video: true,
+		audio: false,
+	});
+	video.srcObject = mediaStream;
+	video.play();
 }
 
 function paintToCanvas() {
@@ -45,7 +55,7 @@ function paintToCanvas() {
 		// Trick to show previous frames using transparency:
 		// ctx.globalAlpha = 0.6;
 
-		// Output image
+		// Paint image using modified data
 		ctx.putImageData(pixels, 0, 0);
 	}, 160);
 }
