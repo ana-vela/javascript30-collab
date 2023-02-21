@@ -1,8 +1,11 @@
-const video = document.querySelector(".player");
+const video23 = document.querySelector(".player");
 const canvas = document.querySelector(".photo");
 const ctx = canvas.getContext("2d");
 const strip = document.querySelector(".strip");
 const snap = document.querySelector(".snap");
+
+const test = 1234;
+test = 2345;
 
 function getVideo() {
 	navigator.mediaDevices
@@ -16,6 +19,7 @@ function getVideo() {
 			console.error(`Oh no!!`, err);
 		});
 }
+
 function paintToCanvas() {
 	const width = video.videoWidth;
 	const height = video.videoHeight;
@@ -68,7 +72,7 @@ function rgbSplit(pixels) {
 
 function greenScreen(pixels) {
 	const levels = {};
-	// console.log(levels);
+	console.log(levels);
 	document.querySelectorAll(".rgb input").forEach((input) => {
 		levels[input.name] = input.value;
 	});
