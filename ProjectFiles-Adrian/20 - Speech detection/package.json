@@ -1,0 +1,15 @@
+{
+  "name": "20-speech-detection",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "browser-sync start --directory --server --files \"*.css, *.html, *.js\" --reload-debounce 500"
+  },
+  "author": "@adrianskar",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.5"
+  }
+}
