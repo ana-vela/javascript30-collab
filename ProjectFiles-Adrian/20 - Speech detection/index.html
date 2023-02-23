@@ -23,12 +23,16 @@
 
 			// Update content on each result:
 			recognition.addEventListener('result', e => {
-				// console.log(e);
-				const transcript = Array.from(e.results)
-					.map(result => result[0])
-					.map(result => result.transcript)
-					.join('');
-				// console.log(transcript);
+				console.log(e);
+
+				/// Easier with object notation? no need for iteration or mapping?
+				// const exerciseTranscript = Array.from(e.results)
+				// 	// .map(result => result[0]) // not needed if included below
+				// 	.map(result => result[0].transcript)
+				// 	.join('');
+				// console.log(exerciseTranscript);
+
+				const transcript = e.results['0']['0'].transcript;
 
 				p.textContent = `- ${transcript
 					.charAt(0)
