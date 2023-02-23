@@ -21,6 +21,7 @@
 			const words = document.querySelector('.words');
 			words.appendChild(p);
 
+			// Update content on each result:
 			recognition.addEventListener('result', e => {
 				// console.log(e);
 				const transcript = Array.from(e.results)
@@ -29,9 +30,12 @@
 					.join('');
 				// console.log(transcript);
 
-				p.textContent = `- ${transcript.charAt(0).toUpperCase()}${transcript.slice(1)}.`;
-				
-				// Final time; not interim
+				p.textContent = `- ${transcript
+					.charAt(0)
+					.toUpperCase()}${transcript.slice(1)}.`;
+
+				// Upon final time (not interim results), add a paragraph instead of
+				// updating the current one.
 				if (e.results[0].isFinal) {
 					p = document.createElement('p');
 					words.appendChild(p);
