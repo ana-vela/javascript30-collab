@@ -17,6 +17,10 @@
 			// return results that are not yet final?
 			recognition.interimResults = true;
 
+			// Set lang; "defaults to the HTML lang attribute value, or the user 
+			// agent's language setting if that isn't set either."
+			recognition.lang = 'en-US';
+
 			let p = document.createElement('p');
 			const words = document.querySelector('.words');
 			words.appendChild(p);
