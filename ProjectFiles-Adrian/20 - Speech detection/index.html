@@ -29,7 +29,8 @@
 					.join('');
 				// console.log(transcript);
 
-				p.textContent = transcript;
+				p.textContent = `- ${transcript.charAt(0).toUpperCase()}${transcript.slice(1)}.`;
+				
 				// Final time; not interim
 				if (e.results[0].isFinal) {
 					p = document.createElement('p');
@@ -43,7 +44,6 @@
 				if (transcript.includes('open a new tab')) {
 					window.open();
 				}
-
 			});
 
 			// Re-start listening (on end event it unbinds itself/no longer listening)
