@@ -56,6 +56,10 @@
 				if (transcript.includes('open a new tab')) {
 					window.open();
 				}
+				// print notes
+				if (transcript.includes('print this notes')) {
+					window.print();
+				}
 			});
 
 			// Re-start listening (on end event it unbinds itself/no longer listening)
