@@ -43,9 +43,9 @@
         left: linkCoords.left + window.scrollX
       }
       // Size and position highlight span accordingly
-      highlight.style.width = `${coords.width}px`;
+      highlight.style.width = `${coords.width+4}px`;
       highlight.style.height = `${coords.height}px`;
-      highlight.style.transform = `translate(${coords.left}px, ${coords.top}px)`;
+      highlight.style.transform = `translate(${coords.left-2}px, ${coords.top}px)`;
     }
     
     triggers.forEach(link => link.addEventListener('mouseenter', highlightLink))
