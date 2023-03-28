@@ -5,6 +5,8 @@ const voicesDropdown = document.querySelector('[name="voice"]');
 const options = document.querySelectorAll('[type="range"], [name="text"]');
 const speakButton = document.querySelector('#speak');
 const stopButton = document.querySelector('#stop');
+const pasteClipboard = document.querySelector('#paste');
+
 // textarea content to msg
 msg.text = document.querySelector('[name="text"]').value;
 
@@ -57,3 +59,25 @@ document.addEventListener('DOMContentLoaded', () => {
 
 voicesDropdown.addEventListener('change', setVoice);
 options.forEach(option => option.addEventListener('change', setOption));
+
+// Replace input for clipboard content on pasteClipboard click
+pasteClipboard.addEventListener('click', () => {
+	if (navigator.clipboard.readText) {
+		navigator.clipboard
+			.readText()
+			.then(clipText => {
+				options[2].value = clipText;
+				// options[2].textContent = clipText;
+				setOption.bind(options[2])();
+			})
+			.catch(err => {
+				console.error('Failed to read clipboard contents: ', err);
+			});
+	} else {
+		console.error('Method .readText() of the Clipboard API not supported');
+		console.log(
+			"Already tried document.execCommand() but its deprecated and doesn't work either"
+		);
+		return;
+	}
+});
