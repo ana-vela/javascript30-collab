@@ -1,13 +1,13 @@
 const msg = new SpeechSynthesisUtterance();
 let voices = [];
 const voicesDropdown = document.querySelector('[name="voice"]');
-// `options` -> both sliders + textarea
+// `options` -> both sliders + `textarea`
 const options = document.querySelectorAll('[type="range"], [name="text"]');
 const speakButton = document.querySelector('#speak');
 const stopButton = document.querySelector('#stop');
 const pasteClipboard = document.querySelector('#paste');
 
-// textarea content to msg
+// `textarea` content to msg
 msg.text = document.querySelector('[name="text"]').value;
 
 // Populate `voicesDropdown` with voices available on the system
@@ -43,13 +43,13 @@ function setOption() {
 	toggle();
 }
 
-// Speak
+// Speak & stop
 speakButton.addEventListener('click', toggle);
-// Stop
 // stopButton.addEventListener('click', toggle.bind(null, false));
 stopButton.addEventListener('click', () => toggle(false));
 
-// This won't trigger on page load in Firefox but is needed for Chrome
+
+// Populate voices in Chrome; this won't trigger on page load in Firefox 
 speechSynthesis.addEventListener('voiceschanged', populateVoices);
 // Get and populate voices in Firefox
 document.addEventListener('DOMContentLoaded', () => {
