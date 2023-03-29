@@ -1,5 +1,12 @@
 # Notes
 
+### Loading voices
+
+The code presented in the exercise didn't work for populating the voices list in Firefox.
+- `speechSynthesis.addEventListener('voiceschanged', populateVoices);`
+	is used for Chrome.
+- `voices = speechSynthesis.getVoices();` on `DOMContentLoaded` event for FF.
+
 ### Resources
 
 * [HTMLElement: change event - Web APIs | MDN](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/change_event "HTMLElement: change event - Web APIs | MDN")
