@@ -85,6 +85,8 @@ textarea {
   border-bottom: 5px solid #F3C010;
   cursor: pointer;
   position: relative;
+  border-radius: 0.3rem;
+
 }
 
 .voiceinator button:last-child {
@@ -100,8 +102,12 @@ textarea {
   cursor: pointer;
   position: relative;
   font-weight: bold;
+  border-radius: 0.3rem;
+
 }
 
 .voiceinator button:active {
-  top: 2px;
+  top: 1px;
+  box-shadow: inset 0 0 10px #f8a100;
+  color:#333;
 }
