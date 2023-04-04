@@ -271,23 +271,35 @@
 		</div>
 
 		<script>
-      const nav = document.querySelector('#main');
-      // Distance to parent top (body)
-      const navTop = nav.offsetTop;
+			const nav = document.querySelector('#main');
+			// Distance to parent top (body)
+			const navTop = nav.offsetTop;
 
-      function fixNav(){
-        if (window.scrollY >= navTop) {
-          // Compensate top space after changing positioning
-          document.body.style.paddingTop = nav.offsetHeight + 'px';
-          // Toggle positioning class
-          document.body.classList.add('fixed-nav');
-        }
-        else{
-          document.body.style.paddingTop = 0;
-          document.body.classList.remove('fixed-nav');
-        }
-      }
-      window.addEventListener('scroll', fixNav)
-    </script>
+			function fixNav() {
+				if (window.scrollY >= navTop) {
+					// Compensate top space after changing positioning
+					document.body.style.paddingTop = nav.offsetHeight + 'px';
+					// Toggle positioning class
+					document.body.classList.add('fixed-nav');
+				} else {
+					document.body.style.paddingTop = 0;
+					document.body.classList.remove('fixed-nav');
+				}
+			}
+
+			function debounce(func, wait) {
+				let count = 0;
+				return () => {
+					count++;
+					if (count % wait === 0) {
+						func();
+						count = 0;
+					}
+				};
+			}
+			// debounce the fixNav function for every (,num) of scroll events
+			const debouncedFixNav = debounce(fixNav, 5);
+			window.addEventListener('scroll', debouncedFixNav);
+		</script>
 	</body>
 </html>
