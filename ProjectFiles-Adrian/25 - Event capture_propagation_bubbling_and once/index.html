@@ -50,8 +50,9 @@
 
 			function logText(e) {
 				console.log(this.classList.value);
-        // Stop the event from bubbling or capturing:
-        e.stopPropagation()
+				// Stop the event from bubbling or capturing:
+				// e.stopPropagation();
+				e.stopImmediatePropagation();
 			}
 
 			divs.forEach(div =>
@@ -60,6 +61,14 @@
 					capture: false,
 					// Remove the listener once it gets triggered
 					once: false,
+				})
+			);
+
+			// 2nd set of listeners to show `stopImmediatePropagation()` effect
+			// this won't trigger if it's used on any previous one
+			divs.forEach(div =>
+				div.addEventListener('click', e => {
+					console.log('Clicked on: ', div);
 				})
 			);
 
