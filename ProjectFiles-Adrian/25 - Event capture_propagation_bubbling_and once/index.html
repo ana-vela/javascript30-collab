@@ -1,48 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Understanding JavaScript's event propagation</title>
-</head>
-<body class="bod">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Understanding JavaScript's event propagation</title>
+	</head>
+	<body class="bod">
+		<div class="one">
+			<div class="two">
+				<div class="three"></div>
+			</div>
+		</div>
 
-  <div class="one">
-    <div class="two">
-      <div class="three">
-      </div>
-    </div>
-  </div>
+		<style>
+			html {
+				box-sizing: border-box;
+			}
 
-<style>
-  html {
-    box-sizing: border-box;
-  }
-  
-  *, *:before, *:after { 
-    box-sizing: inherit; 
-  }
+			*,
+			*:before,
+			*:after {
+				box-sizing: inherit;
+			}
 
-  div {
-    width: 100%;
-    padding: 100px;
-  }
+			div {
+				width: 100%;
+				padding: 100px;
+			}
 
-  .one {
-    background: thistle;
-  }
+			.one {
+				background: thistle;
+			}
 
-  .two {
-    background: mistyrose;
-  }
+			.two {
+				background: mistyrose;
+			}
 
-  .three {
-    background: coral;
-  }
-</style>
+			.three {
+				background: coral;
+			}
+			button {
+				padding: 0.6rem;
+			}
+		</style>
 
-<button></button>
-<script>
+		<button></button>
+		<script>
+			const divs = document.querySelectorAll('div');
+			const button = document.querySelector('button');
 
-</script>
-</body>
+			function logText(e) {
+				console.log(this.classList.value);
+        // Stop the event from bubbling or capturing:
+        e.stopPropagation()
+			}
+
+			divs.forEach(div =>
+				div.addEventListener('click', logText, {
+					// bubble the event or capture it
+					capture: false,
+					// Remove the listener once it gets triggered
+					once: false,
+				})
+			);
+
+			button.addEventListener('click', console.log('click on the button'), {
+				once: true,
+			});
+		</script>
+	</body>
 </html>
