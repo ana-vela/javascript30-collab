@@ -270,6 +270,24 @@
 			</p>
 		</div>
 
-		<script></script>
+		<script>
+      const nav = document.querySelector('#main');
+      // Distance to parent top (body)
+      const navTop = nav.offsetTop;
+
+      function fixNav(){
+        if (window.scrollY >= navTop) {
+          // Compensate top space after changing positioning
+          document.body.style.paddingTop = nav.offsetHeight + 'px';
+          // Toggle positioning class
+          document.body.classList.add('fixed-nav');
+        }
+        else{
+          document.body.style.paddingTop = 0;
+          document.body.classList.remove('fixed-nav');
+        }
+      }
+      window.addEventListener('scroll', fixNav)
+    </script>
 	</body>
 </html>

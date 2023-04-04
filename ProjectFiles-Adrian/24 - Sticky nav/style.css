@@ -25,6 +25,11 @@ body {
   transition: transform 0.5s;
 }
 
+/* Article "zoom" */
+.fixed-nav .site-wrap {
+  transform: scale(1.02);
+}
+
 header {
   text-align: center;
   height: 50vh;
@@ -50,6 +55,13 @@ nav {
   z-index: 1;
 }
 
+/* Nav to fixed positioning */
+.fixed-nav nav {
+  position: fixed;
+  box-shadow: 0 3px #6661
+}
+
+
 nav ul {
   margin: 0;
   padding: 0;
@@ -69,9 +81,14 @@ li.logo {
   max-width: 0;
   overflow: hidden;
   background: white;
-  transition: all .5s;
+  transition: all .6s;
   font-weight: 600;
   font-size: 30px;
+}
+
+/* Toggle logo visibility */
+.fixed-nav li.logo {
+  max-width: 500px;
 }
 
 li.logo a {
