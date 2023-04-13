@@ -67,9 +67,10 @@
 			// 2nd set of listeners to show `stopImmediatePropagation()` effect
 			// this won't trigger if it's used on any previous one
 			divs.forEach(div =>
-				div.addEventListener('click', e => {
-					console.log('Clicked on: ', div);
-				})
+				// div.addEventListener('click', e => {
+				// 	console.log('Clicked on: ', div);
+				// })
+				div.addEventListener('click', console.log)
 			);
 
 			button.addEventListener('click', () => console.log('click on the button'), {
