@@ -34,6 +34,45 @@
 			<div class="item item25">25</div>
 		</div>
 
-		<script></script>
+		<script>
+			const slider = document.querySelector('.items');
+			let isDown = false;
+			let startX, scrollLeft;
+
+			slider.addEventListener('mousedown', (e) => {
+				isDown = true;
+				slider.classList.add('active')
+				// Mouse position and account for spacing between page and the element
+				startX = e.pageX - slider.offsetLeft;
+				scrollLeft = slider.scrollLeft;
+				console.log(startX);
+			});
+			slider.addEventListener('mouseleave', () => {
+				isDown = false;
+				slider.classList.remove('active')
+			});
+			slider.addEventListener('mouseup', () => {
+				isDown = false;
+				slider.classList.remove('active')
+			});
+			slider.addEventListener('mousemove', (e) => {
+				if (!isDown) return 
+				// Prevent text selection
+				e.preventDefault();
+				const x = e.pageX - slider.offsetLeft;
+				// How much distance the pointer travels from start
+				const walk = x - startX;
+
+				// Move more per scroll:
+				const walkMore = (x-startX) * 2;
+		
+				// console.log({x, startX});
+				// console.log(e.pageX, slider.offsetLeft);
+				slider.scrollLeft = scrollLeft - walkMore;
+
+			});
+
+
+		</script>
 	</body>
 </html>
