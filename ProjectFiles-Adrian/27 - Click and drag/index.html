@@ -43,9 +43,9 @@
 				isDown = true;
 				slider.classList.add('active');
 				// Mouse position and account for spacing between page and the element
-				startX = e.pageX - slider.offsetLeft;
+				// startX = e.pageX - slider.offsetLeft;
+				startX = e.clientX;
 				scrollLeft = slider.scrollLeft;
-				console.log(startX);
 			});
 
 			// 
@@ -60,16 +60,20 @@
 				if (!isDown) return;
 				// Prevent text selection
 				e.preventDefault();
-				const x = e.pageX - slider.offsetLeft;
+				// const x = e.clientX;
+				
 				// How much distance the pointer travels from start
-				const walk = x - startX;
+				const walk = e.clientX - startX;
+
+				// console.log({x, walk});
+				// console.log(e.clientX, e.screenX);
 
 				// Move more per scroll:
-				const walkMore = (x - startX) * 2;
+				// const walkMore = (x - startX) * 2;
 
 				// console.log({x, startX});
 				// console.log(e.pageX, slider.offsetLeft);
-				slider.scrollLeft = scrollLeft - walkMore;
+				slider.scrollLeft = scrollLeft - walk;
 			});
 		</script>
 	</body>
