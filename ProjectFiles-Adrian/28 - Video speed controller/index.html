@@ -31,7 +31,7 @@
 				// const y = e.layerY; // non-standard
 
 				// Distance from pointer to element's top
-				const y = e.pageY - this.offsetTop;
+				const y = (e.pageY || e.touches[0].pageY) - this.offsetTop;
 				const percent = y / this.offsetHeight;
 
 				const [min, max] = [0.4, 4];
@@ -43,6 +43,7 @@
 				video.playbackRate = playbackRate;
 			}
 			speedContainer.addEventListener('mousemove', handleMove);
+			speedContainer.addEventListener('touchmove', handleMove);
 		</script>
 	</body>
 </html>
