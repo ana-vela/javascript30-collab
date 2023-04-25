@@ -16,11 +16,33 @@
 				loop
 				controls
 			></video>
-			<div class="speed">
-				<div class="speed-bar">1×</div>
+			<div id="speed-container">
+				<div id="speed-bar">1×</div>
 			</div>
 		</div>
 
-		<script></script>
+		<script>
+			const speedContainer = document.querySelector('#speed-container');
+			const speedBar = speedContainer.querySelector('#speed-bar');
+			const video = document.querySelector('video.flex');
+
+			// Doing this on the bar itself results on glitchy background changes
+			function handleMove(e) {
+				// const y = e.layerY; // non-standard
+
+				// Distance from pointer to element's top
+				const y = e.pageY - this.offsetTop;
+				const percent = y / this.offsetHeight;
+
+				const [min, max] = [0.4, 4];
+				const height = `${Math.round(percent * 100)}%`;
+				const playbackRate = percent * (max - min) + min;
+				speedBar.style.height = height;
+				speedBar.textContent = `${playbackRate.toFixed(2)}x`;
+
+				video.playbackRate = playbackRate;
+			}
+			speedContainer.addEventListener('mousemove', handleMove);
+		</script>
 	</body>
 </html>
