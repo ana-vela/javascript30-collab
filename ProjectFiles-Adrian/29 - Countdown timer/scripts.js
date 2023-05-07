@@ -27,8 +27,8 @@ function timer(seconds) {
 function displayTimeLeft(secs) {
 	const minutes = Math.floor(secs / 60);
 	const remainderSecs = secs % 60;
-	const display = `${minutes}:${remainderSecs < 10 ? '0' : ''}${remainderSecs}`;
-	// const	display = `${minutes}:${String(remainderSecs).padStart(2,'0')}`;
+	// const display = `${minutes}:${remainderSecs < 10 ? '0' : ''}${remainderSecs}`;
+	const	display = `${minutes}:${String(remainderSecs).padStart(2,'0')}`;
 	timerDisplay.textContent = display;
 	document.title = `Timer: ${display}`;
 }
@@ -38,7 +38,9 @@ function displayEndTime(timestamp){
 	const hour = end.getHours();
 	const minutes = end.getMinutes();
 	const americanHour = hour > 12 ? hour - 12 : hour;
-	endTime.textContent = `Be back at: ${hour}:${minutes < 10 ? '0' : ''}${minutes} (${americanHour}:${minutes < 10 ? '0' : ''}${minutes})`;
+	// endTime.textContent = `Be back at: ${hour}:${minutes < 10 ? '0' : ''}${minutes} (${americanHour}:${minutes < 10 ? '0' : ''}${minutes})`;
+	endTime.textContent = `Be back at: ${hour}:${String(minutes).padStart(2, '0')} (${americanHour}:${String(minutes).padStart(2, '0')})`;
+
 }
 
 function startTimer(){
