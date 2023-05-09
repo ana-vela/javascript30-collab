@@ -36,6 +36,7 @@
 		</div>
 
 		<script>
+			const lastScore = localStorage.getItem('lastScore') || 0;
 			const holes = document.querySelectorAll('.hole');
 			const moles = document.querySelectorAll('.mole');
 			const startButton = document.querySelector('#start-game');
@@ -79,6 +80,8 @@
 				timeUp = false;
 				score = 0;
 				peep();
+
+				// Set endgame time
 				setTimeout(() => {
 					timeUp = true;
 				}, 10000);
@@ -90,10 +93,13 @@
 				score++;
 				this.classList.remove('up');
 				scoreBoard.textContent = score;
+				// save last score
+				localStorage.setItem('lastScore', score);
 			}
 
 			moles.forEach(mole => mole.addEventListener('click', bonk));
 			startButton.addEventListener('click', startGame);
+			scoreBoard.textContent = localStorage.getItem('lastScore') || score;
 		</script>
 	</body>
 </html>
