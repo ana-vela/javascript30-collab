@@ -62,7 +62,7 @@
 			}
 
 			function peep() {
-				// show random mole
+				// Show random mole
 				const time = randomTime(200, 1000); // milliseconds
 				const hole = randomHole(holes);
 
@@ -88,12 +88,12 @@
 			}
 
 			function bonk(e) {
-				// on player hit
-				if (!e.isTrusted) return; // fake click
+				// On player hit
+				if (!e.isTrusted) return; // check for fake clicks
 				score++;
 				this.classList.remove('up');
 				scoreBoard.textContent = score;
-				// save last score
+				// Save last score
 				localStorage.setItem('lastScore', score);
 			}
 
