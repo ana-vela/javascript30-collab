@@ -3,7 +3,7 @@
 
 import {paths} from './exercise-paths.js';
 
-console.log(paths);
+// console.log(paths);
 
 const table = document.querySelector('table');
 let frag = document.createDocumentFragment();
@@ -16,7 +16,6 @@ for (const exercise in paths) {
 	const td = document.createElement('td');
 	const exerciseName = paths[exercise]['ana'];
 	td.textContent = exerciseName.replace(/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/, '');
-	// row.appendChild(td);
 
 	// td with link to Ana's exercise
 	const td2 = document.createElement('td');
@@ -24,7 +23,6 @@ for (const exercise in paths) {
 	a.textContent = 'Demo';
 	a.href = paths[exercise]['ana'];
 	td2.appendChild(a);
-	// row.appendChild(td2);
 
 	// td with link to Adrian's exercise
 	const td3 = document.createElement('td');
@@ -32,10 +30,21 @@ for (const exercise in paths) {
 	a2.textContent = 'Demo';
 	a2.href = paths[exercise]['adrian'];
 	td3.appendChild(a2);
-	// row.appendChild(td3);
 
 	row.append(td, td2, td3);
+	
+	// Add notes if present
+	if (paths[exercise]['notes']) {
+		const td4 = document.createElement('td');
+		const a3 = document.createElement('a');
+		a3.textContent = 'Notes';
+		a3.href = paths[exercise]['adrian'];
+		td4.appendChild(a3);
 
+		row.appendChild(td4);
+	}
+
+	// Add content to row and fragment
 	frag.appendChild(row);
 }
 	
