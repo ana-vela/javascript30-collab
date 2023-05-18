@@ -38,7 +38,7 @@ for (const exercise in paths) {
 		const td4 = document.createElement('td');
 		const a3 = document.createElement('a');
 		a3.textContent = 'Notes';
-		a3.href = paths[exercise]['adrian'];
+		a3.href = paths[exercise]['notes'];
 		td4.appendChild(a3);
 
 		row.appendChild(td4);
