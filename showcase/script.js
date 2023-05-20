@@ -20,28 +20,30 @@ function createTdLink(name, href) {
 
 // Iterate over exercises and create a table row for each
 for (const exercise in paths) {
+	const {ana, adrian, notes} = paths[exercise];
+
 	// create a table row
 	const row = document.createElement('tr');
 
 	// td with exercise number and name
 	const td = document.createElement('td');
-	const exerciseName = paths[exercise]['ana'];
+	const exerciseName = ana;
 	td.textContent = exerciseName.replace(/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/, '');
 
 	// td with link to Ana's exercise
-	const tdAna = createTdLink('Demo', paths[exercise]['ana']);
+	const tdAna = createTdLink('Demo', ana);
 	td.appendChild(tdAna);
 
 	// td with link to Adrian's exercise
-	const tdAdrian = createTdLink('Demo', paths[exercise]['adrian']);
+	const tdAdrian = createTdLink('Demo', adrian);
 	td.appendChild(tdAdrian);
 
 
 	row.append(td, tdAna, tdAdrian);
 	
 	// Add notes if present
-	if (paths[exercise]['notes']) {
-		const tdNotes = createTdLink('Notes', paths[exercise]['notes']);
+	if (notes) {
+		const tdNotes = createTdLink('Notes', notes);
 		row.appendChild(tdNotes);
 	}
 
