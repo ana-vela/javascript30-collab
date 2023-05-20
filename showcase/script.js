@@ -8,6 +8,17 @@ import {paths} from './exercise-paths.js';
 const table = document.querySelector('table');
 let frag = document.createDocumentFragment();
 
+
+function createTdLink(name, href) {
+	const td = document.createElement('td');
+	const a = document.createElement('a');
+	a.textContent = name;
+	a.href = href;
+	td.appendChild(a);
+	return td;
+} 
+
+// Iterate over exercises and create a table row for each
 for (const exercise in paths) {
 	// create a table row
 	const row = document.createElement('tr');
@@ -18,30 +29,20 @@ for (const exercise in paths) {
 	td.textContent = exerciseName.replace(/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/, '');
 
 	// td with link to Ana's exercise
-	const td2 = document.createElement('td');
-	const a = document.createElement('a');
-	a.textContent = 'Demo';
-	a.href = paths[exercise]['ana'];
-	td2.appendChild(a);
+	const tdAna = createTdLink('Demo', paths[exercise]['ana']);
+	td.appendChild(tdAna);
 
 	// td with link to Adrian's exercise
-	const td3 = document.createElement('td');
-	const a2 = document.createElement('a');
-	a2.textContent = 'Demo';
-	a2.href = paths[exercise]['adrian'];
-	td3.appendChild(a2);
+	const tdAdrian = createTdLink('Demo', paths[exercise]['adrian']);
+	td.appendChild(tdAdrian);
 
-	row.append(td, td2, td3);
+
+	row.append(td, tdAna, tdAdrian);
 	
 	// Add notes if present
 	if (paths[exercise]['notes']) {
-		const td4 = document.createElement('td');
-		const a3 = document.createElement('a');
-		a3.textContent = 'Notes';
-		a3.href = paths[exercise]['notes'];
-		td4.appendChild(a3);
-
-		row.appendChild(td4);
+		const tdNotes = createTdLink('Notes', paths[exercise]['notes']);
+		row.appendChild(tdNotes);
 	}
 
 	// Add content to row and fragment
