@@ -24,7 +24,7 @@ h1 {
 }
 
 .score {
-	background: rgba(255, 255, 255, 0.2);
+	background: rgba(255, 255, 255, 0.7);
 	padding: 0 3rem;
 	line-height: 1;
 	border-radius: 1rem;
@@ -68,4 +68,21 @@ h1 {
 
 .hole.up .mole {
 	top: 0;
+}
+
+.start {
+	margin: 2em auto;
+	display: block;
+	font-size: 30px;
+	background-color: #452f07;
+	color: white;
+	padding: 0.4em;
+	border-radius: 10px;
+	transition: 0.7s ease-in-out;
+
+}
+
+.start:hover {
+	background-color: white;
+	color: #452f07;
 }
