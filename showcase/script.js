@@ -1,54 +1,42 @@
 // can't import json directly as of yet, rely on .js or use fetch
 // import data from './exercise-paths.json';
+import { paths } from './exercise-paths.js';
 
-import {paths} from './exercise-paths.js';
-
-// console.log(paths);
-
-const table = document.querySelector('table');
+const container = document.querySelector('.exercise-container');
 let frag = document.createDocumentFragment();
 
+function createCard(exerciseName, ana) {
+	const card = document.createElement('div');
+	card.classList.add('exercise-card');
 
-function createTdLink(name, href) {
-	const td = document.createElement('td');
-	const a = document.createElement('a');
-	a.textContent = name;
-	a.href = href;
-	td.appendChild(a);
-	return td;
-} 
+	// Title
+	const title = document.createElement('h3');
+	title.textContent = exerciseName.replace(
+		/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/,
+		''
+	);
+	card.appendChild(title);
 
-// Iterate over exercises and create a table row for each
-for (const exercise in paths) {
-	const {ana, adrian, notes} = paths[exercise];
+	// Image
+	const image = document.createElement('img');
+	image.src = 'exercise-image.jpg'; // Replace with the actual image source
+	card.appendChild(image);
 
-	// create a table row
-	const row = document.createElement('tr');
+	// Link
+	const link = document.createElement('a');
+	link.textContent = 'Demo';
+	link.href = ana; // Replace with the appropriate link
+	card.appendChild(link);
 
-	// td with exercise number and name
-	const td = document.createElement('td');
-	const exerciseName = ana;
-	td.textContent = exerciseName.replace(/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/, '');
-
-	// td with link to Ana's exercise
-	const tdAna = createTdLink('Demo', ana);
-	td.appendChild(tdAna);
-
-	// td with link to Adrian's exercise
-	const tdAdrian = createTdLink('Demo', adrian);
-	td.appendChild(tdAdrian);
-
-
-	row.append(td, tdAna, tdAdrian);
-	
-	// Add notes if present
-	if (notes) {
-		const tdNotes = createTdLink('Notes', notes);
-		row.appendChild(tdNotes);
-	}
-
-	// Add content to row and fragment
-	frag.appendChild(row);
+	return card;
 }
-	
-table.append(frag);
+
+// Iterate over exercises and create a card for each
+for (const exercise in paths) {
+	const { ana } = paths[exercise];
+	const card = createCard(exercise, ana);
+	frag.appendChild(card);
+}
+
+container.appendChild(frag);
+document.body.appendChild(container);
