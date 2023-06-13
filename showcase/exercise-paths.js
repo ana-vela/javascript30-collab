@@ -35,7 +35,7 @@ export const paths = {
 		notes: '../Notes/07-Array-Cardio-Day-2.md',
 	},
 	8: {
-		ana: '../ProjectFiles-Ana/08-Fun-with-HTML5-Canvas',
+		ana: '../ProjectFiles-Ana/08 - Fun with HTML5 Canvas',
 		adrian: '../ProjectFiles-Adrian/08 - Fun with HTML5 canvas',
 		notes: '../Notes/08-Fun-with-HTML5-Canvas.md',
 	},
