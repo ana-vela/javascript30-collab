@@ -1,7 +1,7 @@
 body {
 	background-color: #22292d;
 	color: white;
-	margin-top: 10rem;
+	margin-top: 3rem;
 }
 
 h1 {
@@ -17,13 +17,39 @@ a:hover {
 	color: gray;
 }
 
-main {
-	display: flex;
-	justify-content: center;
-}
 
 .exercise-container {
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+	grid-template-columns: repeat(2, 1fr);
 	gap: 2rem;
+	place-items: center;
+	max-width: calc(20rem * 2 + 2rem); /* Width of 2 cards + gap */
+	margin: 0 auto;
+}
+
+/* Media queries for wide and very wide resolutions using range syntax */
+@media (width >= 1200px) {
+	.exercise-container {
+		grid-template-columns: repeat(4, 1fr);
+		max-width: calc(20rem * 4 + 6rem); /* Width of 4 cards + 3 gaps */
+	}
+}
+@media (width >= 2400px) {
+	.exercise-container {
+		grid-template-columns: repeat(6, 1fr);
+		max-width: calc(20rem * 6 + 8rem); /* Width of 6 cards + 5 gaps */
+	}
+}
+
+.exercise-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	max-width: 20rem;
+}
+
+.exercise-card img {
+	max-width: 100%;
+	height: auto;
 }

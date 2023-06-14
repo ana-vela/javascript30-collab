@@ -19,13 +19,13 @@ function createCard(exerciseName, ana) {
 
 	// Image
 	const image = document.createElement('img');
-	image.src = 'exercise-image.jpg'; // Replace with the actual image source
+	image.src = './screenshot-sample.avif'; 
 	card.appendChild(image);
 
 	// Link
 	const link = document.createElement('a');
 	link.textContent = 'Demo';
-	link.href = ana; // Replace with the appropriate link
+	link.href = ana; 
 	card.appendChild(link);
 
 	return card;
