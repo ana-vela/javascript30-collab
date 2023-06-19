@@ -27,19 +27,20 @@ a:hover {
 	margin: 0 auto;
 }
 
-/* Media queries for wide and very wide resolutions using range syntax */
+/* Media queries for wide and very wide resolutions using range syntax
 @media (width >= 1200px) {
 	.exercise-container {
 		grid-template-columns: repeat(4, 1fr);
-		max-width: calc(20rem * 4 + 6rem); /* Width of 4 cards + 3 gaps */
+		max-width: calc(20rem * 4 + 6rem);
 	}
 }
 @media (width >= 2400px) {
 	.exercise-container {
 		grid-template-columns: repeat(6, 1fr);
-		max-width: calc(20rem * 6 + 8rem); /* Width of 6 cards + 5 gaps */
+		max-width: calc(20rem * 6 + 8rem); 
 	}
-}
+} 
+*/
 
 .exercise-card {
 	display: flex;
