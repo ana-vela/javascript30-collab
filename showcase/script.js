@@ -31,11 +31,12 @@ function createCard(exerciseName, ana) {
 	return card;
 }
 
-// Iterate over exercises and create a card for each
+// Iterate over exercises and create cards for each of them
 for (const exercise in paths) {
-	const { ana } = paths[exercise];
-	const card = createCard(exercise, ana);
-	frag.appendChild(card);
+	const { ana, adrian } = paths[exercise];
+	const cardAna = createCard(exercise, ana);
+	const cardAdrian = createCard(exercise, adrian); 
+	frag.append(cardAna, cardAdrian);
 }
 
 container.appendChild(frag);
