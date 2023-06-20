@@ -1,6 +1,17 @@
+:root {
+	--text-color: hsla(0, 0%, 100%, 0.933);
+	--text-color-l90: hsla(0, 0%, 90%, 0.933);
+	--dark-text-color: darkblue;
+	--border-radius-cards: 6px;
+	--bg-color: hsl(202, 14%, 15%);
+	--bg-color-l25: hsl(202, 14%, 25%);
+	--bg-color-l35: hsl(202, 14%, 35%);
+}
+
+
 body {
-	background-color: #22292d;
-	color: white;
+	background-color: hsl(202, 14%, 15%);
+	color: var(--text-color-l90);
 	margin-top: 3rem;
 }
 
@@ -23,8 +34,25 @@ a:hover {
 	grid-template-columns: repeat(2, 1fr);
 	gap: 2rem;
 	place-items: center;
-	max-width: calc(20rem * 2 + 2rem); /* Width of 2 cards + gap */
+	max-width: calc(20rem * 2 + 2rem);
+	/* Width of 2 cards + gap */
 	margin: 0 auto;
+}
+
+h2 {
+	background-color: var(--text-color);
+	color: darkblue;
+	text-shadow: #2C254659 1px 1px 1px;
+	border: 1px solid var(--bg-color-l35);
+	padding: 1rem 4rem;
+	border-radius: var(--border-radius-cards);
+	box-shadow: -2px 20px 1000px #faebd744;
+	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+	font-size: 1rem;
+
+	background: #e0e0e0ee;
+	box-shadow: 10px 10px 20px var(--bg-color-l35),
+		-10px -10px 20px var(--bg-color-l25);
 }
 
 /* Media queries for wide and very wide resolutions using range syntax
@@ -42,12 +70,21 @@ a:hover {
 } 
 */
 
+
+
+/* Try something like this?: https://uiverse.io/alexruix/cowardly-ape-35 */
+
 .exercise-card {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 	max-width: 20rem;
+
+	border-radius: var(--border-radius-cards);
+	padding: 0.8rem 0;
+	border: 2px solid #c3c6ce;
+	transition: 0.5s ease-out;
 }
 
 .exercise-card img {
