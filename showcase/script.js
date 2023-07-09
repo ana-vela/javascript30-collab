@@ -5,13 +5,13 @@ import { paths } from './exercise-paths.js';
 const container = document.querySelector('.exercise-container');
 let frag = document.createDocumentFragment();
 
-function createCard(exerciseName, ana) {
+function createCard(exPath, author) {
 	const card = document.createElement('div');
 	card.classList.add('exercise-card');
 
 	// Title
 	const title = document.createElement('h3');
-	title.textContent = exerciseName.replace(
+	title.textContent = exPath.replace(
 		/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/,
 		''
 	);
@@ -25,7 +25,7 @@ function createCard(exerciseName, ana) {
 	// Link
 	const link = document.createElement('a');
 	link.textContent = 'Demo';
-	link.href = ana; 
+	link.href = author; 
 	card.appendChild(link);
 
 	return card;
