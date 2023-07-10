@@ -32,8 +32,8 @@ function createCard(exPath, authorPath, authorName) {
 // Iterate over exercises and create cards for each of them
 for (const exercise in paths) {
 	const { ana, adrian } = paths[exercise];
-	const cardAna = createCard(exercise, ana, 'Ana');
-	const cardAdrian = createCard(exercise, adrian, 'Adrian');
+	const cardAna = createCard(exercise, ana, 'ana');
+	const cardAdrian = createCard(exercise, adrian, 'adrian');
 	frag.append(cardAna, cardAdrian);
 }
 
