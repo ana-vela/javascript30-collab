@@ -6,6 +6,9 @@ const container = document.querySelector('.exercise-container');
 let frag = document.createDocumentFragment();
 
 function createCard(exPath, authorPath, authorName, projectName) {
+	let exerciseName = authorPath.replace(/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/, '');
+	console.log(exerciseName);
+
 	const card = document.createElement('div');
 	card.classList.add('exercise-card');
 
@@ -14,10 +17,10 @@ function createCard(exPath, authorPath, authorName, projectName) {
 	title.textContent = exPath;
 	card.appendChild(title);
 
-	 // Project Name
-	 const project = document.createElement('p');
-	 project.textContent = projectName;
-	 card.appendChild(project);
+	// Project Name
+	const project = document.createElement('p'); // paragraph or header?
+	project.textContent = projectName;
+	card.appendChild(project);
 
 	// Image
 	const image = document.createElement('img');
