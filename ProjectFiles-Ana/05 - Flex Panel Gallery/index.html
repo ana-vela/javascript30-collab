@@ -9,6 +9,28 @@
 			type="text/css"
 		/>
 		<link rel="stylesheet" href="style.css" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<div class="panels">
@@ -40,21 +62,21 @@
 		</div>
 
 		<script>
-			const panels = document.querySelectorAll(".panel");
+			const panels = document.querySelectorAll('.panel');
 
 			function toggleOpen() {
-				this.classList.toggle("open");
+				this.classList.toggle('open');
 			}
 
 			function toggleActive(e) {
 				console.log(e.propertyName);
-				if (e.propertyName.includes("flex")) {
-					this.classList.toggle("open-active");
+				if (e.propertyName.includes('flex')) {
+					this.classList.toggle('open-active');
 				}
 			}
-			panels.forEach((panel) => panel.addEventListener("click", toggleOpen));
-			panels.forEach((panel) =>
-				panel.addEventListener("transitionend", toggleActive)
+			panels.forEach(panel => panel.addEventListener('click', toggleOpen));
+			panels.forEach(panel =>
+				panel.addEventListener('transitionend', toggleActive)
 			);
 		</script>
 	</body>

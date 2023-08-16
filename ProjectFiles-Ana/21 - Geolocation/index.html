@@ -4,6 +4,28 @@
 		<meta charset="UTF-8" />
 		<title>Document</title>
 		<meta name="viewport" content="width=device-width" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<svg
@@ -96,18 +118,18 @@
 			/*Compass: https://thenounproject.com/search/?q=compass&i=592352*/
 		</style>
 		<script>
-			const arrow = document.querySelector(".arrow");
-			const speed = document.querySelector(".spped-value");
+			const arrow = document.querySelector('.arrow');
+			const speed = document.querySelector('.spped-value');
 
 			navigator.geolocation.watchPosition(
-				(data) => {
+				data => {
 					console.log(data);
 					speed.textContent = data.coords.speed;
 					arrow.style.transform = `rotate(${data.coords.heading}deg)`;
 				},
-				(err) => {
+				err => {
 					console.err(err);
-					alert("Hey, you gotta allow that to happen!");
+					alert('Hey, you gotta allow that to happen!');
 				}
 			);
 		</script>

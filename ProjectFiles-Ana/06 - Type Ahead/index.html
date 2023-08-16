@@ -4,6 +4,28 @@
 		<meta charset="UTF-8" />
 		<title>Type Ahead 👀</title>
 		<link rel="stylesheet" href="style.css" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<form class="search-form">
@@ -15,30 +37,30 @@
 		</form>
 		<script>
 			const endpoint =
-				"https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+				'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
 
 			const cities = [];
 			fetch(endpoint)
-				.then((blob) => blob.json())
-				.then((data) => cities.push(...data));
+				.then(blob => blob.json())
+				.then(data => cities.push(...data));
 			function findMatches(wordToMatch, cities) {
-				return cities.filter((place) => {
+				return cities.filter(place => {
 					//figure out if the city or state matches what was searched
-					const regex = new RegExp(wordToMatch, "gi");
+					const regex = new RegExp(wordToMatch, 'gi');
 					return place.city.match(regex) || place.state.match(regex);
 				});
 			}
 
 			function numberWithCommas(x) {
-				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+				return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
 			}
 
 			function displayMatches() {
 				// console.log(this.value);
 				const matchArray = findMatches(this.value, cities);
 				const html = matchArray
-					.map((place) => {
-						const regex = new RegExp(this.value, "gi");
+					.map(place => {
+						const regex = new RegExp(this.value, 'gi');
 						const cityName = place.city.replace(
 							regex,
 							`<span class="hl">${this.value}</span>`
@@ -57,17 +79,17 @@
 					`;
 						//this join converts it from an array with multiple items into one big string
 					})
-					.join("");
+					.join('');
 				suggestions.innerHTML = html;
 
 				// console.log(matchArray);
 			}
 
-			const searchInput = document.querySelector(".search");
-			const suggestions = document.querySelector(".suggestions");
+			const searchInput = document.querySelector('.search');
+			const suggestions = document.querySelector('.suggestions');
 
-			searchInput.addEventListener("change", displayMatches);
-			searchInput.addEventListener("keyup", displayMatches);
+			searchInput.addEventListener('change', displayMatches);
+			searchInput.addEventListener('keyup', displayMatches);
 		</script>
 	</body>
 </html>

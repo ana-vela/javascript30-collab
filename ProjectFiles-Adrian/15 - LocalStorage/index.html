@@ -4,6 +4,28 @@
 		<meta charset="UTF-8" />
 		<title>LocalStorage</title>
 		<link rel="stylesheet" href="style.css" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<!--
@@ -131,9 +153,9 @@
 			// Clear list
 			const clearListBtn = document.querySelector('#clear-list');
 			clearListBtn.addEventListener('click', clearList);
-			function clearList(){
+			function clearList() {
 				// Do nothing if already empty
-				if (items.length === 0) return
+				if (items.length === 0) return;
 
 				/// Dirty way
 				// items.length = 0;
@@ -143,7 +165,7 @@
 				// localStorage.clear();
 
 				// Delete items only
-				localStorage.removeItem('items')
+				localStorage.removeItem('items');
 
 				populateList([], itemsList);
 			}

@@ -7,20 +7,42 @@
 			type="text/javascript"
 			src="https://www.cornify.com/js/cornify.js"
 		></script>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<script>
 			const pressed = [];
-			const secretCode = "hello";
-			window.addEventListener("keyup", (e) => {
+			const secretCode = 'hello';
+			window.addEventListener('keyup', e => {
 				console.log(e.key);
 				pressed.push(e.key);
 				pressed.splice(
 					-secretCode.length - 1,
 					pressed.length - secretCode.length
 				);
-				if (pressed.join("").includes(secretCode)) {
-					console.log("You found the secret code!");
+				if (pressed.join('').includes(secretCode)) {
+					console.log('You found the secret code!');
 					cornify_add();
 				}
 				console.log(pressed);

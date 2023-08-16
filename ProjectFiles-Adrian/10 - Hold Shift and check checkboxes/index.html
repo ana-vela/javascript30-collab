@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Hold Shift to check multiple checkboxes</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<style>
@@ -122,17 +144,15 @@
 						const orderedIdx = [startIndex, endIndex].sort();
 
 						// Check all boxes within startIndex and endIndex
-						currItems.forEach((item, idx) =>{
+						currItems.forEach((item, idx) => {
 							if (idx >= orderedIdx[0] && idx <= orderedIdx[1]) {
 								item.firstElementChild.checked = true;
 							}
-						})
+						});
 					} else {
 						console.log("I'm the only checked/unchecked box");
 					}
-				}
-
-				else console.log('No shift key pressed');
+				} else console.log('No shift key pressed');
 			};
 
 			inputs.forEach(input => {

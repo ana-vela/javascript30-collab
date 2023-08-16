@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Speech detection</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<div class="words" contenteditable></div>
@@ -17,7 +39,7 @@
 			// return results that are not yet final?
 			recognition.interimResults = true;
 
-			// Set lang; "defaults to the HTML lang attribute value, or the user 
+			// Set lang; "defaults to the HTML lang attribute value, or the user
 			// agent's language setting if that isn't set either."
 			recognition.lang = 'en-US';
 

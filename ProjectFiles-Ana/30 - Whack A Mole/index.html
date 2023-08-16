@@ -9,6 +9,28 @@
 			type="text/css"
 		/>
 		<link rel="stylesheet" href="style.css" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<h1>Whack-a-mole! <span class="score">0</span></h1>
@@ -36,9 +58,9 @@
 		</div>
 
 		<script>
-			const holes = document.querySelectorAll(".hole");
-			const scoreBoard = document.querySelector(".score");
-			const moles = document.querySelectorAll(".mole");
+			const holes = document.querySelectorAll('.hole');
+			const scoreBoard = document.querySelector('.score');
+			const moles = document.querySelectorAll('.mole');
 			let lastHole;
 			let timeUp = false;
 			let score = 0;
@@ -52,7 +74,7 @@
 				const idx = Math.floor(Math.random() * holes.length);
 				const hole = holes[idx];
 				if (hole === lastHole) {
-					console.log("Nah thats the same one");
+					console.log('Nah thats the same one');
 					return randomHole(holes);
 				}
 				lastHole = hole;
@@ -62,16 +84,16 @@
 			function peep() {
 				const time = randomTime(500, 1000);
 				const hole = randomHole(holes);
-				hole.classList.add("up");
+				hole.classList.add('up');
 				setTimeout(() => {
-					hole.classList.remove("up");
+					hole.classList.remove('up');
 					if (!timeUp) peep();
 				}, time);
 			}
 
 			function highScore() {
 				if (score === topScore) {
-					alert("Incredible Score!");
+					alert('Incredible Score!');
 				}
 			}
 
@@ -86,12 +108,12 @@
 			function bonk(e) {
 				if (!e.isTrusted) return; // ensures no cheating
 				score++;
-				this.classList.remove("up");
+				this.classList.remove('up');
 				scoreBoard.textContent = score;
 				highScore();
 			}
 
-			moles.forEach((mole) => mole.addEventListener("click", bonk));
+			moles.forEach(mole => mole.addEventListener('click', bonk));
 		</script>
 	</body>
 </html>

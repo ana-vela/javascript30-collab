@@ -4,6 +4,28 @@
 		<meta charset="UTF-8" />
 		<title>LocalStorage</title>
 		<link rel="stylesheet" href="style.css" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<!--
@@ -54,22 +76,22 @@
 		</div>
 
 		<script>
-			const addItems = document.querySelector(".add-items");
-			const itemsList = document.querySelector(".plates");
-			const items = JSON.parse(localStorage.getItem("items")) || [];
+			const addItems = document.querySelector('.add-items');
+			const itemsList = document.querySelector('.plates');
+			const items = JSON.parse(localStorage.getItem('items')) || [];
 
 			function addItem(e) {
 				// stops the page from reloading
 				e.preventDefault();
 				//'this' is the actual form tag
-				const text = this.querySelector("[name=item]").value;
+				const text = this.querySelector('[name=item]').value;
 				const item = {
 					text,
 					done: false,
 				};
 				items.push(item);
 				populateList(items, itemsList);
-				localStorage.setItem("items", JSON.stringify(items));
+				localStorage.setItem('items', JSON.stringify(items));
 				this.reset();
 				console.log(item);
 			}
@@ -79,26 +101,26 @@
 						return ` 
 						<li>
 							<input type="checkbox" data-index=${i} id="item${i}" ${
-							plate.done ? "checked" : " "
+							plate.done ? 'checked' : ' '
 						}/>
 						<label for="item${i}">${plate.text}</label>
 						</li>
 						`;
 					})
-					.join("");
+					.join('');
 			}
 
 			function toggleDone(e) {
-				if (!e.target.matches("input")) return; //skip this unless it is an input
+				if (!e.target.matches('input')) return; //skip this unless it is an input
 				const el = e.target;
 				const index = el.dataset.index;
 				items[index].done = !items[index].done;
-				localStorage.setItem("items", JSON.stringify(items));
+				localStorage.setItem('items', JSON.stringify(items));
 				populateList(items, itemsList);
 			}
 
-			addItems.addEventListener("submit", addItem);
-			itemsList.addEventListener("click", toggleDone);
+			addItems.addEventListener('submit', addItem);
+			itemsList.addEventListener('click', toggleDone);
 			populateList(items, itemsList);
 		</script>
 	</body>

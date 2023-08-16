@@ -1,49 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>02 - JS and CSS clock</title>
-	<link rel="stylesheet" href="style.css">
-	<!-- Extras:
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>02 - JS and CSS clock</title>
+		<link rel="stylesheet" href="style.css" />
+		<!-- Extras:
 
 	- Different length for hours/mins/secs -->
-</head>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
+	</head>
 
-<body>
-	<main class="clock">
-		<div class="clock-face">
-			<div class="hand hour-hand"></div>
-			<div class="hand min-hand"></div>
-			<div class="hand sec-hand"></div>
-		</div>
-	</main>
+	<body>
+		<main class="clock">
+			<div class="clock-face">
+				<div class="hand hour-hand"></div>
+				<div class="hand min-hand"></div>
+				<div class="hand sec-hand"></div>
+			</div>
+		</main>
 
-	<script>
-		const secHand = document.querySelector(".sec-hand"),
-			minHand = document.querySelector(".min-hand"),
-			hourHand = document.querySelector(".hour-hand");
-		function getTime() {
-			const now = new Date(),
-				/// Seconds
-				secs = now.getSeconds(),
-				// 90 to account for `rotate(90deg)` offset
-				secsDeg = ((secs / 60) * 360) + 90,
-				/// Minutes
-				mins = now.getMinutes(),
-				minsDeg = ((mins / 60) * 360) + 90,
-				/// Hours
-				hours = now.getHours(),
-				hoursDeg = ((hours / 12) * 360) + 90
-				;
-			secHand.style.transform = `rotate(${secsDeg}deg)`;
-			minHand.style.transform = `rotate(${minsDeg}deg)`;
-			hourHand.style.transform = `rotate(${hoursDeg}deg)`;
-		}
-		setInterval(getTime, 1000);
-	</script>
-</body>
-
+		<script>
+			const secHand = document.querySelector('.sec-hand'),
+				minHand = document.querySelector('.min-hand'),
+				hourHand = document.querySelector('.hour-hand');
+			function getTime() {
+				const now = new Date(),
+					/// Seconds
+					secs = now.getSeconds(),
+					// 90 to account for `rotate(90deg)` offset
+					secsDeg = (secs / 60) * 360 + 90,
+					/// Minutes
+					mins = now.getMinutes(),
+					minsDeg = (mins / 60) * 360 + 90,
+					/// Hours
+					hours = now.getHours(),
+					hoursDeg = (hours / 12) * 360 + 90;
+				secHand.style.transform = `rotate(${secsDeg}deg)`;
+				minHand.style.transform = `rotate(${minsDeg}deg)`;
+				hourHand.style.transform = `rotate(${hoursDeg}deg)`;
+			}
+			setInterval(getTime, 1000);
+		</script>
+	</body>
 </html>

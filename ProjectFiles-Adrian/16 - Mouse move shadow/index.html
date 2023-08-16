@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Mouse shadow</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<div class="hero">
@@ -38,7 +60,7 @@
 			const hero = document.querySelector('.hero');
 			const h1 = hero.querySelector('h1');
 			const walk = 66; // 50 px
-      let hue = 0;
+			let hue = 0;
 
 			function shadow(e) {
 				// .hero dimensions
@@ -52,28 +74,28 @@
 					x = x + e.target.offsetLeft;
 					y = y + e.target.offsetTop;
 				}
-        // Distance ranges for shadows
-				const xWalk = Math.round(((x / width) * walk) - (walk / 2));
-				const yWalk = Math.round(((y / height) * walk) - (walk / 2));
+				// Distance ranges for shadows
+				const xWalk = Math.round((x / width) * walk - walk / 2);
+				const yWalk = Math.round((y / height) * walk - walk / 2);
 
-        // console.log(x, y, xWalk, yWalk);
+				// console.log(x, y, xWalk, yWalk);
 
-        // h1.style.textShadow = `
-        // ${xWalk}px ${yWalk}px 0 rgba(200,0,200,0.7),
-        // ${xWalk * -1}px ${yWalk}px 0 rgba(0,200,0,0.7),
-        // ${xWalk}px ${yWalk * -1}px 0 rgba(0,0,200,0.7),
-        // ${yWalk}px ${xWalk * -1}px 0 rgba(200,0,0,0.7),
-        // ${yWalk *-1}px ${xWalk}px 0 rgba(0,0,255,0.7),
-        // ${yWalk}px ${xWalk}px 0 rgba(0,255,0,0.7)
-        // `
+				// h1.style.textShadow = `
+				// ${xWalk}px ${yWalk}px 0 rgba(200,0,200,0.7),
+				// ${xWalk * -1}px ${yWalk}px 0 rgba(0,200,0,0.7),
+				// ${xWalk}px ${yWalk * -1}px 0 rgba(0,0,200,0.7),
+				// ${yWalk}px ${xWalk * -1}px 0 rgba(200,0,0,0.7),
+				// ${yWalk *-1}px ${xWalk}px 0 rgba(0,0,255,0.7),
+				// ${yWalk}px ${xWalk}px 0 rgba(0,255,0,0.7)
+				// `
 
-        // Apply hue color change from 8th exercise
-        hue++;
+				// Apply hue color change from 8th exercise
+				hue++;
 				if (hue >= 360) hue = 0;
 
-        h1.style.textShadow = `
+				h1.style.textShadow = `
         ${xWalk}px ${yWalk}px 5px hsl(${hue}, 100%, 50%)
-        `
+        `;
 			}
 
 			hero.addEventListener('mousemove', shadow);

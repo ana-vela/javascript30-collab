@@ -3,11 +3,33 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Understanding JavaScript's Capture</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body class="bod">
 		<div class="one">
 			<div class="two">
-				<div class="three"> </div>
+				<div class="three"></div>
 			</div>
 		</div>
 
@@ -42,23 +64,23 @@
 
 		<button>Click Me</button>
 		<script>
-			const divs = document.querySelectorAll("div");
-			const button = document.querySelector("button");
+			const divs = document.querySelectorAll('div');
+			const button = document.querySelector('button');
 			function logText(e) {
 				console.log(this.classList.value);
 				e.stopPropagation(); // stop bubbling
 			}
 
-			divs.forEach((div) =>
-				div.addEventListener("click", logText, {
+			divs.forEach(div =>
+				div.addEventListener('click', logText, {
 					capture: false,
 					once: true,
 				})
 			);
 			button.addEventListener(
-				"click",
+				'click',
 				() => {
-					console.log("You clicked the button");
+					console.log('You clicked the button');
 				},
 				{
 					once: true,

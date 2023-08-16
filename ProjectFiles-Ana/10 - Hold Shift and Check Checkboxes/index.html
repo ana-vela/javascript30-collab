@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Hold Shift to Check Multiple Checkboxes</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<style>
@@ -34,7 +56,7 @@
 				text-decoration: line-through;
 			}
 
-			input[type="checkbox"] {
+			input[type='checkbox'] {
 				margin: 20px;
 			}
 
@@ -43,7 +65,7 @@
 				padding: 20px;
 				transition: background 0.2s;
 				flex: 1;
-				font-family: "helvetica neue";
+				font-family: 'helvetica neue';
 				font-size: 20px;
 				font-weight: 200;
 				border-left: 1px solid #d1e2ff;
@@ -103,11 +125,11 @@
 				// check if they had the shift key down,
 				let inBetween = false;
 				if (e.shiftKey && this.checked) {
-					checkboxes.forEach((checkbox) => {
+					checkboxes.forEach(checkbox => {
 						console.log(checkbox);
 						if (checkbox === this || checkbox === lastChecked) {
 							inBetween = !inBetween;
-							console.log("starting to check inbetween");
+							console.log('starting to check inbetween');
 						}
 						if (inBetween) {
 							checkbox.checked = true;
@@ -116,8 +138,8 @@
 				}
 				lastChecked = this;
 			}
-			checkboxes.forEach((checkbox) =>
-				checkbox.addEventListener("click", handleCheck)
+			checkboxes.forEach(checkbox =>
+				checkbox.addEventListener('click', handleCheck)
 			);
 		</script>
 	</body>

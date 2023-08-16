@@ -3,50 +3,72 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Console Tricks!</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<p onClick="makeGreen()">×BREAK×DOWN×</p>
 
 		<script>
 			const dogs = [
-				{ name: "Snickers", age: 2 },
-				{ name: "hugo", age: 8 },
+				{ name: 'Snickers', age: 2 },
+				{ name: 'hugo', age: 8 },
 			];
 
 			function makeGreen() {
-				const p = document.querySelector("p");
-				p.style.color = "#BADA55";
-				p.style.fontSize = "50px";
+				const p = document.querySelector('p');
+				p.style.color = '#BADA55';
+				p.style.fontSize = '50px';
 			}
 
 			// Regular
-			console.log("hello world");
+			console.log('hello world');
 
 			// Interpolated
-			console.log("Hi, I am a %s string.", "😀");
+			console.log('Hi, I am a %s string.', '😀');
 
 			// Styled
 			console.log(
-				"%cAdding styling in the console",
-				"font-size:30px;background-color: yellow;"
+				'%cAdding styling in the console',
+				'font-size:30px;background-color: yellow;'
 			);
 
 			// warning!
-			console.log("Watch Out");
+			console.log('Watch Out');
 
 			// Error :|
-			console.log("Definitely an error");
+			console.log('Definitely an error');
 
 			// Info
-			console.info("Crocodiles eat 3 -4 people a year");
+			console.info('Crocodiles eat 3 -4 people a year');
 
 			// Testing
 			//test for something and the message will run only if the assertion is not true, no if statement needed
-			console.assert(1 === 1, "That is wrong");
+			console.assert(1 === 1, 'That is wrong');
 
-			const p = document.querySelector("p");
+			const p = document.querySelector('p');
 
-			console.assert(p.classList.contains("ouch"), "That is not correct");
+			console.assert(p.classList.contains('ouch'), 'That is not correct');
 
 			// clearing your console
 			console.clear();
@@ -57,7 +79,7 @@
 
 			// Grouping together
 			//this example groups together the console log messages by dog name
-			dogs.forEach((dog) => {
+			dogs.forEach(dog => {
 				console.groupCollapsed(`${dog.name}`);
 				console.log(`This is ${dog.name}`);
 				console.log(`${dog.name} is ${dog.age} years old`);
@@ -67,22 +89,22 @@
 
 			// counting
 
-			console.count("pop");
-			console.count("fizz");
-			console.count("pop");
-			console.count("pop");
-			console.count("pop");
-			console.count("fizz");
-			console.count("fizz");
-			console.count("fizz");
-			console.count("pop");
+			console.count('pop');
+			console.count('fizz');
+			console.count('pop');
+			console.count('pop');
+			console.count('pop');
+			console.count('fizz');
+			console.count('fizz');
+			console.count('fizz');
+			console.count('pop');
 
 			// timing
-			console.time("fetching data");
-			fetch("https://api.github.com/users/ana-vela")
-				.then((data) => data.json())
-				.then((data) => {
-					console.timeEnd("fetching data");
+			console.time('fetching data');
+			fetch('https://api.github.com/users/ana-vela')
+				.then(data => data.json())
+				.then(data => {
+					console.timeEnd('fetching data');
 					console.log(data);
 				});
 

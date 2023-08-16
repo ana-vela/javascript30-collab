@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Follow Along Nav</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<h2>Cool</h2>
@@ -17,11 +39,11 @@
 					<div class="dropdown dropdown1">
 						<div class="bio">
 							<img src="https://logo.clearbit.com/wesbos.com" />
-							<p
-								>Wes Bos sure does love web development. He teaches things like
+							<p>
+								Wes Bos sure does love web development. He teaches things like
 								JavaScript, CSS and BBQ. Wait. BBQ isn't part of web
-								development. It should be though!</p
-							>
+								development. It should be though!
+							</p>
 						</div>
 					</div>
 				</li>
@@ -71,22 +93,20 @@
 				<li>
 					<a href="#">Other Links</a>
 					<ul class="dropdown dropdown3">
-						<li
-							><a class="button" href="http://twitter.com/wesbos"
-								>Twitter</a
-							></li
-						>
-						<li
-							><a class="button" href="http://facebook.com/wesbos.developer"
+						<li>
+							<a class="button" href="http://twitter.com/wesbos">Twitter</a>
+						</li>
+						<li>
+							<a class="button" href="http://facebook.com/wesbos.developer"
 								>Facebook</a
-							></li
-						>
+							>
+						</li>
 						<li><a class="button" href="http://wesbos.com">Blog</a></li>
-						<li
-							><a class="button" href="http://wesbos.com/courses"
+						<li>
+							<a class="button" href="http://wesbos.com/courses"
 								>Course Catalog</a
-							></li
-						>
+							>
+						</li>
 					</ul>
 				</li>
 			</ul>
@@ -95,7 +115,7 @@
 		<style>
 			html {
 				box-sizing: border-box;
-				font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial,
+				font-family: 'Arial Rounded MT Bold', 'Helvetica Rounded', Arial,
 					sans-serif;
 			}
 
@@ -255,33 +275,33 @@
 			}
 
 			/* Matches Twitter, TWITTER, twitter, tWitter, TWiTTeR... */
-			.button[href*="twitter"] {
+			.button[href*='twitter'] {
 				background: #019fe9;
 			}
-			.button[href*="facebook"] {
+			.button[href*='facebook'] {
 				background: #3b5998;
 			}
-			.button[href*="courses"] {
+			.button[href*='courses'] {
 				background: #ffc600;
 			}
 		</style>
 
 		<script>
-			const triggers = document.querySelectorAll(".cool > li");
-			const background = document.querySelector(".dropdownBackground");
-			const nav = document.querySelector(".top");
+			const triggers = document.querySelectorAll('.cool > li');
+			const background = document.querySelector('.dropdownBackground');
+			const nav = document.querySelector('.top');
 
 			function handleEnter() {
-				this.classList.add("trigger-enter");
+				this.classList.add('trigger-enter');
 				setTimeout(
 					() =>
-						this.classList.contains("trigger-enter") &&
-						this.classList.add("trigger-enter-active"),
+						this.classList.contains('trigger-enter') &&
+						this.classList.add('trigger-enter-active'),
 					150
 				);
-				background.classList.add("open");
+				background.classList.add('open');
 
-				const dropdown = this.querySelector(".dropdown");
+				const dropdown = this.querySelector('.dropdown');
 				console.log(dropdown);
 				const dropdownCoords = dropdown.getBoundingClientRect();
 				const navCoords = nav.getBoundingClientRect();
@@ -292,24 +312,24 @@
 					top: dropdownCoords.top - navCoords.top,
 					left: dropdownCoords.left - navCoords.left,
 				};
-				background.style.setProperty("width", `${coords.width}px`);
-				background.style.setProperty("height", `${coords.height}px`);
+				background.style.setProperty('width', `${coords.width}px`);
+				background.style.setProperty('height', `${coords.height}px`);
 				background.style.setProperty(
-					"transform",
+					'transform',
 					`translate(${coords.left}px, ${coords.top}px)`
 				);
 			}
 
 			function handleLeave() {
-				this.classList.remove("trigger-enter", "trigger-enter-active");
-				background.classList.remove("open");
+				this.classList.remove('trigger-enter', 'trigger-enter-active');
+				background.classList.remove('open');
 			}
 
-			triggers.forEach((trigger) =>
-				trigger.addEventListener("mouseenter", handleEnter)
+			triggers.forEach(trigger =>
+				trigger.addEventListener('mouseenter', handleEnter)
 			);
-			triggers.forEach((trigger) =>
-				trigger.addEventListener("mouseleave", handleLeave)
+			triggers.forEach(trigger =>
+				trigger.addEventListener('mouseleave', handleLeave)
 			);
 		</script>
 	</body>

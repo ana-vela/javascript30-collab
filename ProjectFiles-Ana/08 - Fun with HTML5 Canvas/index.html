@@ -3,21 +3,43 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>HTML5 Canvas</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<canvas id="draw" width="800" height="800"></canvas>
 		<script>
-			const canvas = document.querySelector("#draw");
+			const canvas = document.querySelector('#draw');
 
-			const ctx = canvas.getContext("2d");
+			const ctx = canvas.getContext('2d');
 
 			canvas.width = window.innerWidth;
 			canvas.height = window.innerHeight;
-			ctx.strokeStyle = "#BADA55";
-			ctx.lineJoin = "round";
-			ctx.lineCap = "round";
+			ctx.strokeStyle = '#BADA55';
+			ctx.lineJoin = 'round';
+			ctx.lineCap = 'round';
 			ctx.lineWidth = 20;
-			ctx.globalCompositeOperation = "multiply";
+			ctx.globalCompositeOperation = 'multiply';
 			let isDrawing = false;
 			let lastX = 0;
 			let lastY = 0;
@@ -52,15 +74,15 @@
 				}
 			}
 
-			canvas.addEventListener("mousemove", draw);
+			canvas.addEventListener('mousemove', draw);
 
-			canvas.addEventListener("mousedown", (e) => {
+			canvas.addEventListener('mousedown', e => {
 				isDrawing = true;
 				[lastX, lastY] = [e.offsetX, e.offsety];
 			});
 
-			canvas.addEventListener("mouseup", () => (isDrawing = false));
-			canvas.addEventListener("mouseout", () => (isDrawing = false));
+			canvas.addEventListener('mouseup', () => (isDrawing = false));
+			canvas.addEventListener('mouseout', () => (isDrawing = false));
 		</script>
 
 		<style>

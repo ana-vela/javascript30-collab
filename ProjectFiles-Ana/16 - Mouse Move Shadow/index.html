@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>Mouse Shadow</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<div class="hero">
@@ -34,8 +56,8 @@
 		</style>
 
 		<script>
-			const hero = document.querySelector(".hero");
-			const text = hero.querySelector("h1");
+			const hero = document.querySelector('.hero');
+			const text = hero.querySelector('h1');
 
 			function shadow(e) {
 				//	const width = hero.offsetWidth;
@@ -61,7 +83,7 @@
 				${yWalk * -1}px ${xWalk}px 0 rgba(0, 0, 255, 0.7)`;
 			}
 
-			hero.addEventListener("mousemove", shadow);
+			hero.addEventListener('mousemove', shadow);
 		</script>
 	</body>
 </html>

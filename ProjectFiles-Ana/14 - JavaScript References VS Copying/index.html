@@ -3,6 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<title>JS Reference VS Copy</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<script>
@@ -14,7 +36,7 @@
 			// console.log(name, name2);
 
 			// Let's say we have an array
-			const players = ["Wes", "Sarah", "Ryan", "Poppy"];
+			const players = ['Wes', 'Sarah', 'Ryan', 'Poppy'];
 
 			// and we want to make a copy of it.
 
@@ -34,7 +56,7 @@
 			// So, how do we fix this? We take a copy instead!
 			const team2 = players.slice();
 
-			team2[3] = "Lux";
+			team2[3] = 'Lux';
 			console.log(players, team2);
 			// one way
 
@@ -52,7 +74,7 @@
 
 			// with Objects
 			const person = {
-				name: "Wes Bos",
+				name: 'Wes Bos',
 				age: 80,
 			};
 
@@ -69,11 +91,11 @@
 
 			// Things to note - this is only 1 level deep - both for Arrays and Objects. lodash has a cloneDeep method, but you should think twice before using it.
 			const wes = {
-				name: "Wes",
+				name: 'Wes',
 				age: 100,
 				social: {
-					twitter: "@wesbos",
-					facebook: "wesbos.developer",
+					twitter: '@wesbos',
+					facebook: 'wesbos.developer',
 				},
 			};
 			// console.clear();

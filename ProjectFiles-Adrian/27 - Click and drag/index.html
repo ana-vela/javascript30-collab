@@ -4,6 +4,28 @@
 		<meta charset="UTF-8" />
 		<title>Click and drag</title>
 		<link rel="stylesheet" href="style.css" />
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<div class="items">
@@ -48,7 +70,7 @@
 				scrollLeft = slider.scrollLeft;
 			});
 
-			// 
+			//
 			['mouseleave', 'mouseup'].forEach(event => {
 				slider.addEventListener(event, () => {
 					isDown = false;
@@ -61,7 +83,7 @@
 				// Prevent text selection
 				e.preventDefault();
 				// const x = e.clientX;
-				
+
 				// How much distance the pointer travels from start
 				const walk = e.clientX - startX;
 

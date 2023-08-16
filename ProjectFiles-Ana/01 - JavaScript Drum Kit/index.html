@@ -6,6 +6,28 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css" />
 		<title>JavaScript Drum Kit</title>
+		<!-- Favicon -->
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../showcase/images/favicon/blue/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../showcase/images/favicon/blue/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../showcase/images/favicon/blue/favicon-16x16.png"
+		/>
+		<link
+			rel="manifest"
+			href="../../showcase/images/favicon/blue/site.webmanifest"
+		/>
 	</head>
 	<body>
 		<div class="keys">
@@ -72,24 +94,24 @@
 				audio.play();
 
 				// adds the playing class
-				key.classList.add("playing");
+				key.classList.add('playing');
 			}
 
 			function removeTransition(e) {
-				if (e.propertyName !== "transform") return; // skip it if it isn't transform
+				if (e.propertyName !== 'transform') return; // skip it if it isn't transform
 
-				this.classList.remove("playing"); //removes playing class
+				this.classList.remove('playing'); //removes playing class
 				console.log(e.propertyName);
 			}
 
-			const keys = document.querySelectorAll(".key");
+			const keys = document.querySelectorAll('.key');
 
-			keys.forEach((key) =>
+			keys.forEach(key =>
 				//looping over the array and attaching event listener
-				key.addEventListener("transitionend", removeTransition)
+				key.addEventListener('transitionend', removeTransition)
 			);
 
-			window.addEventListener("keydown", playSound);
+			window.addEventListener('keydown', playSound);
 		</script>
 	</body>
 </html>
