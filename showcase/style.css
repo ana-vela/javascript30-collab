@@ -1,7 +1,7 @@
 :root {
-	--text-color: hsla(0, 0%, 100%, 0.933);
-	--text-color-l90: hsla(0, 0%, 90%, 0.933);
-	--dark-text-color: darkblue;
+	--text-color: hsl(42, 100%, 61%);
+	--text-color-l70: hsla(42, 100%, 70%, 0.933);
+	--dark-text-color: hsl(240, 100%, 27%);
 	--border-radius-cards: 6px;
 	--bg-color: hsl(202, 14%, 15%);
 	--bg-color-l25: hsl(202, 14%, 25%);
@@ -10,9 +10,10 @@
 
 
 body {
-	background-color: hsl(202, 14%, 15%);
-	color: var(--text-color-l90);
 	margin-top: 3rem;
+	background-color: hsl(202, 14%, 15%);
+	color: var(--text-color-l70);
+	background-image: linear-gradient(to left, #191d88, #191e7d, #1a1f73, #1b1f68, #1c1f5d, #1c1f5d, #1c1f5d, #1c1f5d, #1b1f68, #1a1f73, #191e7d, #191d88);
 }
 
 h1 {
@@ -21,7 +22,7 @@ h1 {
 }
 
 a {
-	color: yellow;
+	color: var(--text-color);
 }
 
 a:hover {
@@ -41,7 +42,7 @@ a:hover {
 
 h2 {
 	background-color: var(--text-color);
-	color: darkblue;
+	color: var(--dark-text-color);
 	text-shadow: #2C254659 1px 1px 1px;
 	border: 1px solid var(--bg-color-l35);
 	padding: 1rem 4rem;
