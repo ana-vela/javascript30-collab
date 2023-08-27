@@ -2,7 +2,7 @@
 	--text-color: hsl(42, 100%, 61%);
 	--text-color-l70: hsla(42, 100%, 70%, 0.933);
 	--dark-text-color: hsl(240, 100%, 27%);
-	--border-radius-cards: 6px;
+	--border-radius-cards: 4px;
 	--bg-color: hsl(202, 14%, 15%);
 	--bg-color-l25: hsl(202, 14%, 25%);
 	--bg-color-l35: hsl(202, 14%, 35%);
@@ -15,7 +15,7 @@ body {
 	color: var(--text-color-l70);
 	background-image: linear-gradient(to left, #191d88, #191e7d, #1a1f73, #1b1f68, #1c1f5d, #1c1f5d, #1c1f5d, #1c1f5d, #1b1f68, #1a1f73, #191e7d, #191d88);
 
-	font-family: "League Spartan", Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
+	font-family: "League Spartan", Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
 h1 {
@@ -44,18 +44,18 @@ a:hover {
 
 h2 {
 	background-color: var(--text-color);
-	color: var(--dark-text-color);
+	color: var(--text-color);
 	text-shadow: #2C254659 1px 1px 1px;
 	border: 1px solid var(--bg-color-l35);
 	padding: 1rem 4rem;
 	border-radius: var(--border-radius-cards);
 	box-shadow: -2px 20px 1000px #faebd744;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	font-size: 1rem;
+	font-size: 1.2rem;
 
-	background: #e0e0e0ee;
-	box-shadow: 10px 10px 20px var(--bg-color-l35),
-		-10px -10px 20px var(--bg-color-l25);
+	border-bottom: 3px solid var(--text-color-l70);
+  background-color: rgba(189,189,189,0.1);
+  border-radius: 5px;
 }
 
 /* Media queries for wide and very wide resolutions using range syntax
@@ -86,8 +86,10 @@ h2 {
 
 	border-radius: var(--border-radius-cards);
 	padding: 0.8rem 0;
-	border: 2px solid #c3c6ce;
+	border:1px solid #6350e3d1;
 	transition: 0.5s ease-out;
+
+	box-shadow: rgb(166, 136, 78) 0px 12px 30px -10px
 }
 
 .exercise-card img {
