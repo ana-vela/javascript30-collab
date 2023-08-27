@@ -14,6 +14,8 @@ body {
 	background-color: hsl(202, 14%, 15%);
 	color: var(--text-color-l70);
 	background-image: linear-gradient(to left, #191d88, #191e7d, #1a1f73, #1b1f68, #1c1f5d, #1c1f5d, #1c1f5d, #1c1f5d, #1b1f68, #1a1f73, #191e7d, #191d88);
+
+	font-family: "League Spartan", Roboto,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';
 }
 
 h1 {
