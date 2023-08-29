@@ -31,7 +31,6 @@ a:hover {
 	color: gray;
 }
 
-
 .exercise-container {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
@@ -73,10 +72,6 @@ h2 {
 } 
 */
 
-
-
-/* Try something like this?: https://uiverse.io/alexruix/cowardly-ape-35 */
-
 .exercise-card {
 	display: flex;
 	flex-direction: column;
@@ -87,12 +82,23 @@ h2 {
 	border-radius: var(--border-radius-cards);
 	padding: 0.8rem 0;
 	border:1px solid #6350e3d1;
-	transition: 0.5s ease-out;
+	transition: box-shadow 0.5s ease-out, border 0.5s ease-out;
 
 	box-shadow: rgb(166, 136, 78) 0px 12px 30px -10px
 }
 
+.exercise-card a{
+	padding-top: 1rem;
+}
 .exercise-card img {
 	max-width: 100%;
 	height: auto;
 }
+
+/* Card hover */
+/* Trying something like this: https://uiverse.io/alexruix/cowardly-ape-35 */
+.exercise-card:hover {
+	border-color: #333;
+	box-shadow: 0 3px 18px 0 var(--text-color);
+ }
+ 
