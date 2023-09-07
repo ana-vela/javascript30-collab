@@ -41,7 +41,7 @@ a:hover {
 	margin: 0 auto;
 }
 
-h2 {
+.participant {
 	background-color: var(--text-color);
 	color: var(--text-color);
 	text-shadow: #2C254659 1px 1px 1px;
@@ -51,7 +51,6 @@ h2 {
 	box-shadow: -2px 20px 1000px #faebd744;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 1.2rem;
-
 	border-bottom: 3px solid var(--text-color-l70);
   background-color: rgba(189,189,189,0.1);
   border-radius: 5px;
