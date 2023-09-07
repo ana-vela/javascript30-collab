@@ -3,17 +3,18 @@
 	--text-color-l70: hsla(42, 100%, 70%, 0.933);
 	--dark-text-color: hsl(240, 100%, 27%);
 	--border-radius-cards: 4px;
-	--bg-color: hsl(202, 14%, 15%);
-	--bg-color-l25: hsl(202, 14%, 25%);
-	--bg-color-l35: hsl(202, 14%, 35%);
+	--bg-color: hsl(234, 85%, 13%); /* #050b3d */
+	--bg-color-l25: hsl(234, 85%, 26%);
+	--bg-color-l35: hsl(202, 14%, 52%);
+	--bg-color-card: hsla(238, 69%, 32%, 0.78); /* #191d88c7 */
 }
 
 
 body {
 	margin-top: 3rem;
-	background-color: hsl(202, 14%, 15%);
+	background-color: var(--bg-color);
 	color: var(--text-color-l70);
-	background-image: linear-gradient(to left, #191d88, #191e7d, #1a1f73, #1b1f68, #1c1f5d, #1c1f5d, #1c1f5d, #1c1f5d, #1b1f68, #1a1f73, #191e7d, #191d88);
+	/* background-image: linear-gradient(to left, #191d88, #191e7d, #1a1f73, #1b1f68, #1c1f5d, #1c1f5d, #1c1f5d, #1c1f5d, #1b1f68, #1a1f73, #191e7d, #191d88); */
 
 	font-family: "League Spartan", Roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
@@ -52,8 +53,8 @@ a:hover {
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 	font-size: 1.2rem;
 	border-bottom: 3px solid var(--text-color-l70);
-  background-color: rgba(189,189,189,0.1);
-  border-radius: 5px;
+	background-color: rgba(189, 189, 189, 0.1);
+	border-radius: 5px;
 }
 
 /* Media queries for wide and very wide resolutions using range syntax
@@ -77,18 +78,19 @@ a:hover {
 	justify-content: center;
 	align-items: center;
 	max-width: 20rem;
-
+	background-color: var(--bg-color-card);
 	border-radius: var(--border-radius-cards);
 	padding: 0.8rem 0;
-	border:1px solid #6350e3d1;
+	border: 1px solid #6350e3d1;
 	transition: box-shadow 0.5s ease-out, border 0.5s ease-out;
 
 	box-shadow: rgb(166, 136, 78) 0px 12px 30px -10px
 }
 
-.exercise-card a{
+.exercise-card a {
 	padding-top: 1rem;
 }
+
 .exercise-card img {
 	max-width: 100%;
 	height: auto;
@@ -99,5 +101,4 @@ a:hover {
 .exercise-card:hover {
 	border-color: #333;
 	box-shadow: 0 3px 18px 0 var(--text-color);
- }
- 
+}
