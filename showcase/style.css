@@ -29,12 +29,21 @@ h1 {
 	font-size: 2.5rem;
 }
 
+a.icon {
+	color: var(--text-color-blue);
+}
+
+/* a:hover.icon {
+	color: var(--text-color-blue-l20)
+} */
+
 /* Showcase description */
 h1+h2 {
 	text-align: center;
 	color: var(--text-color-blue);
 }
-h1+h2 a{
+
+h1+h2 a {
 	color: var(--text-color-blue-l20);
 }
 
