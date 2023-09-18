@@ -1,12 +1,17 @@
 :root {
 	--text-color: hsl(42, 100%, 61%);
 	--text-color-l70: hsla(42, 100%, 70%, 0.933);
+	--text-color-blue: hsla(185.9, 48.6%, 49.6%, 0.93);
+	--text-color-blue-l20: hsla(185.9, 48.6%, 69.6%, 0.93);
+
 	--dark-text-color: hsl(240, 100%, 27%);
 	--border-radius-cards: 4px;
-	--bg-color: hsl(234, 85%, 13%); /* #050b3d */
+	--bg-color: hsl(234, 85%, 13%);
+	/* #050b3d */
 	--bg-color-l25: hsl(234, 85%, 26%);
 	--bg-color-l35: hsl(202, 14%, 52%);
-	--bg-color-card: hsla(238, 69%, 32%, 0.78); /* #191d88c7 */
+	--bg-color-card: hsla(238, 69%, 32%, 0.78);
+	/* #191d88c7 */
 }
 
 
@@ -22,6 +27,15 @@ body {
 h1 {
 	text-align: center;
 	font-size: 2.5rem;
+}
+
+/* Showcase description */
+h1+h2 {
+	text-align: center;
+	color: var(--text-color-blue);
+}
+h1+h2 a{
+	color: var(--text-color-blue-l20);
 }
 
 a {
