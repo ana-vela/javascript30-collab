@@ -1,8 +1,8 @@
 :root {
 	--text-color: hsl(42, 100%, 61%);
-	--text-color-l70: hsla(42, 100%, 70%, 0.933);
-	--text-color-blue: hsla(185.9, 48.6%, 49.6%, 0.93);
-	--text-color-blue-l20: hsla(185.9, 48.6%, 69.6%, 0.93);
+	--text-color-l70: hsl(42, 100%, 70%);
+	--text-color-blue: hsl(186, 49%, 50%);
+	--text-color-blue-l20: hsl(186, 49%, 70%);
 
 	--dark-text-color: hsl(240, 100%, 27%);
 	--border-radius-cards: 4px;
@@ -52,7 +52,7 @@ a {
 }
 
 a:hover {
-	color: gray;
+	filter: contrast(2);
 }
 
 .exercise-container {
