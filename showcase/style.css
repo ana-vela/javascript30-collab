@@ -66,18 +66,13 @@ a:hover {
 }
 
 .participant {
-	background-color: var(--text-color);
-	color: var(--text-color);
-	text-shadow: #2C254659 1px 1px 1px;
-	border: 1px solid var(--bg-color-l35);
-	padding: 1rem 4rem;
-	border-radius: var(--border-radius-cards);
-	box-shadow: -2px 20px 1000px #faebd744;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	font-size: 1.2rem;
-	border-bottom: 3px solid var(--text-color-l70);
-	background-color: rgba(189, 189, 189, 0.1);
-	border-radius: 5px;
+	background-image: linear-gradient(-35deg, #444, white);
+	color: transparent;
+	background-clip: text;
+	-webkit-background-clip: text;
+	padding: 0.4rem 1rem;
+	font-size: 2rem;
+	border-bottom: 1px solid #3336;
 }
 
 /* Media queries for wide and very wide resolutions using range syntax
