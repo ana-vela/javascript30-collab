@@ -119,6 +119,10 @@ a:hover {
 	height: auto;
 }
 
+.exercise-card h3 {
+	padding: 0 1rem;
+}
+
 /* Card hover */
 /* Trying something like this: https://uiverse.io/alexruix/cowardly-ape-35 */
 .exercise-card:hover {
