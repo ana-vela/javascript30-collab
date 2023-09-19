@@ -27,6 +27,7 @@ body {
 h1 {
 	text-align: center;
 	font-size: 2.5rem;
+	margin-bottom:0;
 }
 
 a.icon {
@@ -41,6 +42,7 @@ a.icon {
 h1+h2 {
 	text-align: center;
 	color: var(--text-color-blue);
+	margin-top: 0.2rem
 }
 
 h1+h2 a {
