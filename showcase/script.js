@@ -5,15 +5,14 @@ import { paths } from './exercise-paths.js';
 const container = document.querySelector('.exercise-container');
 let frag = document.createDocumentFragment();
 
-function createCard(exPath, authorPath, authorName) {
+function createCard(exName, exPath, authorPath, authorName) {
 	
 	const card = document.createElement('div');
 	card.classList.add('exercise-card');
 	
 	// Project Name
-	const exerciseName = authorPath.replace(/^(\.\.\/ProjectFiles-(Adrian|Ana)\/)/, '');
 	const project = document.createElement('h3');
-	project.textContent = exerciseName;
+	project.textContent = exName;
 	card.appendChild(project);
 
 	// Image
@@ -33,9 +32,9 @@ function createCard(exPath, authorPath, authorName) {
 
 // Iterate over exercises and create cards for each of them
 for (const exercise in paths) {
-	const { ana, adrian } = paths[exercise];
-	const cardAna = createCard(exercise, ana, 'ana');
-	const cardAdrian = createCard(exercise, adrian, 'adrian');
+	const { ana, adrian, project: exName } = paths[exercise];
+	const cardAna = createCard(exName, exercise, ana, 'ana');
+	const cardAdrian = createCard(exName, exercise, adrian, 'adrian');
 	frag.append(cardAna, cardAdrian);
 }
 
