@@ -1,6 +1,5 @@
 // can't import json directly as of yet, rely on .js or use fetch
-// import data from './exercise-paths.json';
-import { paths } from './exercise-paths.js';
+import { paths } from './showcase-data.js';
 
 const container = document.querySelector('.exercise-container');
 let frag = document.createDocumentFragment();
