@@ -1,32 +1,46 @@
 // can't import json directly as of yet, rely on .js or use fetch
 import { paths } from './showcase-data.js';
 
-const container = document.querySelector('.exercise-container');
+const main = document.querySelector('main');
 let frag = document.createDocumentFragment();
 
 function createCard({ exName, exPath, authors }) {
 	const card = document.createElement('div');
 	card.classList.add('exercise-card');
 
-	// Project Name
+	// Project name
 	const project = document.createElement('h3');
 	project.textContent = exName;
 	card.appendChild(project);
 
+	// Exercise container
+	const container = document.createElement('div');
+	container.classList.add('exercise-container');
+
 	authors.forEach(author => {
+		// Exercise
+		const exercise = document.createElement('div');
+		exercise.classList.add('exercise');
+
 		// Image
 		const image = document.createElement('img');
 		const imagePath = `./images/${author.authorName}/${author.authorName}-${exPath}.avif`;
 		image.src = imagePath ?? './screenshot-sample.avif';
-		card.appendChild(image);
+		exercise.appendChild(image);
 
 		// Link
 		const link = document.createElement('a');
-		link.textContent = 'Demo';
+		// Capitalize author name
+		const capName = author.authorName.charAt(0).toUpperCase() + author.authorName.slice(1);
+		link.textContent = `${capName}'s demo`;
 		link.href = author.authorPath;
-		card.appendChild(link);
+		exercise.appendChild(link);
+
+
+		container.appendChild(exercise);
 	});
 
+	card.appendChild(container);
 	return card;
 }
 
@@ -43,6 +57,5 @@ for (const exercise in paths) {
 }
 
 
-
-container.appendChild(frag);
-document.body.appendChild(container);
+main.appendChild(frag);
+document.body.appendChild(main);

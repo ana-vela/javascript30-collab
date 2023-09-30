@@ -27,16 +27,12 @@ body {
 h1 {
 	text-align: center;
 	font-size: 2.5rem;
-	margin-bottom:0;
+	margin-bottom: 0;
 }
 
 a.icon {
 	color: var(--text-color-blue);
 }
-
-/* a:hover.icon {
-	color: var(--text-color-blue-l20)
-} */
 
 /* Showcase description */
 h1+h2 {
@@ -57,9 +53,9 @@ a:hover {
 	filter: contrast(2);
 }
 
-.exercise-container {
+main {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	gap: 2rem;
 	place-items: center;
 	max-width: calc(20rem * 2 + 2rem);
@@ -97,7 +93,7 @@ a:hover {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	max-width: 20rem;
+	max-width: 40rem;
 	background-color: var(--bg-color-card);
 	border-radius: var(--border-radius-cards);
 	padding: 0.8rem 0;
@@ -121,9 +117,21 @@ a:hover {
 	margin-top: 0.8rem;
 }
 
+
 /* Card hover */
 /* Trying something like this: https://uiverse.io/alexruix/cowardly-ape-35 */
 .exercise-card:hover {
 	border-color: #333;
 	box-shadow: 0 3px 18px 0 var(--text-color);
+}
+
+.exercise-container {
+	display: flex;
+	flex-direction: row;
+	text-align:center;
+
+}
+.exercise-container .exercise {
+	display: flex;
+	flex-direction: column;
 }
