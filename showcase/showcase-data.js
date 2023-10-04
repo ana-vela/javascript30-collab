@@ -11,7 +11,7 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/02 - JS and CSS clock',
 		notes: '../Notes/02-JS-CSS-Clock.md',
 		project: 'JS and CSS Clock',
-		description: 'build a clock based on current time with rotating clock hands',
+		description: 'Build a clock based on current time with rotating clock hands',
 
 	},
 	3: {
@@ -34,14 +34,14 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/05 - Flex panel gallery',
 		notes: '../Notes/05-Flex-Panel-Gallery.md',
 		project: 'Flex Panel Gallery',
-		description: 'Using Flexbox to create an accordion like flex gallery',
+		description: 'Use Flexbox to create an accordion like flex gallery',
 	},
 	6: {
 		ana: '../ProjectFiles-Ana/06 - Type Ahead',
 		adrian: '../ProjectFiles-Adrian/06 - Type ahead',
 		notes: '../Notes/06-Type-Ahead.md',
 		project: 'Type Ahead',
-		description: ' Display filtered data using the fetch API',
+		description: 'Display filtered data using the fetch API',
 	},
 	7: {
 		ana: '../ProjectFiles-Ana/07 - Array Cardio Day 2',
@@ -69,7 +69,7 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/10 - Hold Shift and check checkboxes',
 		notes: '../Notes/10-Hold-Shift-and-Check-Checkboxes.md',
 		project: 'Hold Shift and Check Checkboxes',
-		description: 'Apply multi-selection on checkboxes ',
+		description: 'Apply multi-selection on checkboxes',
 	},
 	11: {
 		ana: '../ProjectFiles-Ana/11 - Custom Video Player',
@@ -136,7 +136,7 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/20 - Speech detection',
 		notes: '../Notes/20-Speech-Detection.md',
 		project: 'Speech Detection',
-		description: 'create a speech recognition interface in the browser',
+		description: 'Create a speech recognition interface in the browser',
 	},
 	21: {
 		ana: '../ProjectFiles-Ana/21 - Geolocation',
@@ -179,7 +179,7 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/26 - Stripe follow along nav',
 		notes: '../Notes/26-Stripe-Follow-Along-Nav.md',
 		project: 'Stripe Follow Along Nav',
-		description: 'displays content on nav link hover with a following smooth animation effect',
+		description: 'Display content on nav link hover with a following smooth animation effect',
 	},
 	27: {
 		ana: '../ProjectFiles-Ana/27 - Click and Drag',
