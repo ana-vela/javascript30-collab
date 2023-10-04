@@ -4,7 +4,7 @@ import { paths } from './showcase-data.js';
 const main = document.querySelector('main');
 let frag = document.createDocumentFragment();
 
-function createCard({ exName, exPath, authors }) {
+function createCard({ exName, exDesc, exPath, authors }) {
 	const card = document.createElement('div');
 	card.classList.add('exercise-card');
 
@@ -12,6 +12,11 @@ function createCard({ exName, exPath, authors }) {
 	const project = document.createElement('h3');
 	project.textContent = exName;
 	card.appendChild(project);
+
+	// Project description
+	const description = document.createElement('p');
+	description.textContent = exDesc;
+	card.appendChild(description);
 
 	// Exercise container
 	const container = document.createElement('div');
@@ -47,12 +52,12 @@ function createCard({ exName, exPath, authors }) {
 
 // Iterate over exercises and create cards for each of them
 for (const exercise in paths) {
-	const { ana, adrian, project: exName } = paths[exercise];
+	const { ana, adrian, project: exName, description: exDesc } = paths[exercise];
 	const authors = [
 		{ authorPath: ana, authorName: 'ana' },
 		{ authorPath: adrian, authorName: 'adrian' },
 	];
-	const card = createCard({ exName, exPath: exercise, authors });
+	const card = createCard({ exName, exDesc, exPath: exercise, authors });
 	frag.append(card);
 }
 
