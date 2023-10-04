@@ -117,6 +117,9 @@ main {
 	margin-top: 0.8rem;
 }
 
+.exercise-card p {
+	margin: -.8em 1em 2em 1em;
+}
 
 /* Card hover */
 /* Trying something like this: https://uiverse.io/alexruix/cowardly-ape-35 */
@@ -129,8 +132,10 @@ main {
 	display: flex;
 	flex-direction: row;
 	text-align:center;
-
+	column-gap: 1em;
+	margin: 0 1em;
 }
+
 .exercise-container .exercise {
 	display: flex;
 	flex-direction: column;
