@@ -120,6 +120,7 @@ main {
 
 .exercise-card p {
 	margin: -.8em 1em 1em;
+	max-width: 52ch;
 }
 
 /* Card hover */
