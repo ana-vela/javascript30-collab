@@ -60,7 +60,7 @@ main {
 	place-items: center;
 	max-width: calc(20rem * 2 + 2rem);
 	/* Width of 2 cards + gap */
-	margin: 0 auto;
+	margin: 0 auto 6rem;
 }
 
 .participant {
