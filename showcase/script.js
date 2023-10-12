@@ -4,6 +4,10 @@ import { paths } from './showcase-data.js';
 const main = document.querySelector('main');
 let frag = document.createDocumentFragment();
 
+// Detect Edge for avif support
+const edgeBrowser = navigator.userAgent.indexOf("Edg") > -1;
+
+
 function createCard({ exName, exDesc, exPath, authors }) {
 	const card = document.createElement('div');
 	card.classList.add('exercise-card');
@@ -29,8 +33,9 @@ function createCard({ exName, exDesc, exPath, authors }) {
 
 		// Image
 		const image = document.createElement('img');
-		const imagePath = `./images/${author.authorName}/${author.authorName}-${exPath}.avif`;
-		image.src = imagePath ?? './screenshot-sample.avif';
+		const imgFormat = edgeBrowser ? 'webp' : 'avif';
+		const imagePath = `./images/${author.authorName}/${author.authorName}-${exPath}.${imgFormat}`;
+		image.src = imagePath ?? `./screenshot-sample.${imgFormat}`;
 		exercise.appendChild(image);
 
 		// Link
