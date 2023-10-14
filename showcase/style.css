@@ -58,9 +58,11 @@ main {
 	grid-template-columns: repeat(1, 1fr);
 	gap: 2rem;
 	place-items: center;
-	max-width: calc(20rem * 2 + 2rem);
+	/* max-width: calc(20rem * 2 + 2rem); */
 	/* Width of 2 cards + gap */
-	margin: 0 auto 6rem;
+	/* margin: 0 auto ; */
+	/* min-height: 100%; */
+	position: relative;
 }
 
 .participant {
@@ -140,4 +142,18 @@ main {
 .exercise-container .exercise {
 	display: flex;
 	flex-direction: column;
+}
+
+footer {
+	width: 100%;
+	height: 5em;
+	position: absolute;
+	bottom: 0;
+	background-color: black;
+	color: white; 
+	margin-bottom: -11em;
+	padding-top: 2em;
+	padding-left: 1em;
+	padding-right: 1em;
+	text-align: center;
 }
