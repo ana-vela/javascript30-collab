@@ -27,7 +27,7 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/04 - Array cardio day 1',
 		notes: '../Notes/04-Array-Cardio-Day-1.md',
 		project: 'Array Cardio Day 1',
-		description: 'Console log exercises practicing array methods such as filter, sort, map, and reduce',
+		description: 'Console log exercises practicing filter, sort, map, and reduce array methods',
 	},
 	5: {
 		ana: '../ProjectFiles-Ana/05 - Flex Panel Gallery',
@@ -48,7 +48,7 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/07 - Array cardio day 2',
 		notes: '../Notes/07-Array-Cardio-Day-2.md',
 		project: 'Array Cardio Day 2',
-		description: 'Console log exercises practicing array methods such as some, every, find, and findIndex',
+		description: 'Console log exercises practicing some, every, find, and findIndex array methods',
 	},
 	8: {
 		ana: '../ProjectFiles-Ana/08 - Fun with HTML5 Canvas',
@@ -83,7 +83,7 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/12 - Key sequence detection',
 		notes: '../Notes/12-Key-Sequence-Detection.md',
 		project: 'Key Sequence Detection',
-		description: 'Create way to keep track of a key sequence which can unlock an effect with the right combination',
+		description: 'Keep track of a key sequence which can unlock an effect with the right combination',
 	},
 	13: {
 		ana: '../ProjectFiles-Ana/13 - Slide in on Scroll',
@@ -123,7 +123,7 @@ export const paths = {
 		ana: '../ProjectFiles-Ana/18 - Adding Up Times with Reduce',
 		adrian: '../ProjectFiles-Adrian/18 - Adding up times with reduce',
 		project: 'Adding Up Times with Reduce',
-		description: 'Add video duration time to get total hours, minutes, and seconds using reduce and map',
+		description: 'Add total video duration hours, minutes, and seconds using reduce and map',
 	},
 	19: {
 		ana: '../ProjectFiles-Ana/19 - Webcam Fun',
@@ -205,6 +205,6 @@ export const paths = {
 		adrian: '../ProjectFiles-Adrian/30 - Whack a mole',
 		notes: '../Notes/30-Wack-A-Mole.md',
 		project: 'Whack A Mole',
-		description: 'Create a Whack-a-mole game with random places and show times and keeping track of scores',
+		description: 'Create a game with random places and show times and keeping track of scores',
 	},
 };
