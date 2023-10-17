@@ -122,6 +122,7 @@ main {
 
 .exercise-card p {
 	margin: -.8em 1em 1em;
+	text-align: center;
 }
 
 /* Card hover */
