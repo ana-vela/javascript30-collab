@@ -17,6 +17,7 @@
 
 body {
 	margin-top: 3rem;
+	overflow-x: hidden;
 	background-color: var(--bg-color);
 	color: var(--text-color-l70);
 	/* background-image: linear-gradient(to left, #191d88, #191e7d, #1a1f73, #1b1f68, #1c1f5d, #1c1f5d, #1c1f5d, #1c1f5d, #1b1f68, #1a1f73, #191e7d, #191d88); */
